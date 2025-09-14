@@ -1,0 +1,7 @@
+*.pyc
+_pycache_/
+*.db
+.env
+logo.py
+logo.png
+generation_history.json
