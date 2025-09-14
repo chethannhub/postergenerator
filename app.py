@@ -83,7 +83,7 @@ Now, this is the user prompt:
         )
     ]
     generate_config = types.GenerateContentConfig(
-        thinking_config=types.ThinkingConfig(),
+        # thinking_config=types.ThinkingConfig(),
         response_mime_type="text/plain"
     )
 
@@ -99,7 +99,7 @@ Now, this is the user prompt:
 # --- Imagen image generation ---
 def generate_poster(prompt, aspect_ratio):
     client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-    result = client.models.generate_images(
+    result = client.models.generate_image(
         model="models/imagen-4.0-generate-preview-06-06",
         prompt=prompt,
         config=dict(
@@ -201,7 +201,7 @@ Given the following enhanced poster prompt, suggest 3-5 harmonious color combina
         objects_contents = [types.Content(role="user", parts=[types.Part(text=objects_prompt)])]
         color_contents = [types.Content(role="user", parts=[types.Part(text=color_prompt)])]
         generate_config = types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(),
+            # thinking_config=types.ThinkingConfig(),
             response_mime_type="text/plain"
         )
         # Objects
@@ -257,15 +257,12 @@ def step4_with_default_logos(enhanced_prompt, prompt, aspect_ratio):
     posters = generate_poster(enhanced_prompt, aspect_ratio)
     poster_data = []
     
-    # Load default logos from the root directory
-    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-    logo1_path = os.path.join(root_dir, 'kALA/Logo.png')
-    logo2_path = os.path.join(root_dir, 'KALA/Logo2.png')
-    print(f"Looking for logos at:")
-    print(f"Logo1: {logo1_path}")
-    print(f"Logo2: {logo2_path}")
-    print(f"Logo1 exists: {os.path.exists(logo1_path)}")
-    print(f"Logo2 exists: {os.path.exists(logo2_path)}")
+    # Simple: use the known paths on your machine
+    logo1_path = os.path.abspath(r"E:\postergenerator\KALA\Logo.png")
+    logo2_path = os.path.abspath(r"E:\postergenerator\KALA\Logo2.png")
+    print("Using logo paths:")
+    print(f"Logo1: {logo1_path} (exists={os.path.exists(logo1_path)})")
+    print(f"Logo2: {logo2_path} (exists={os.path.exists(logo2_path)})")
     
     def get_logo_xy(pos, poster, logo, scale=0.25):
         w, h = poster.width, poster.height
@@ -477,7 +474,7 @@ Given the following enhanced poster prompt, suggest 3-5 harmonious color combina
         objects_contents = [types.Content(role="user", parts=[types.Part(text=objects_prompt)])]
         color_contents = [types.Content(role="user", parts=[types.Part(text=color_prompt)])]
         generate_config = types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(),
+            # thinking_config=types.ThinkingConfig(),
             response_mime_type="text/plain"
         )
         # Objects

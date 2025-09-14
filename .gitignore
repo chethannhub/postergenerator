@@ -5,3 +5,6 @@ _pycache_/
 logo.py
 logo.png
 generation_history.json
+.venev/
+__pycache__/
+venv/
