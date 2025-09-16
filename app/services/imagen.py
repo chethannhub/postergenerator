@@ -12,7 +12,7 @@ def generate_poster(prompt: str, aspect_ratio: str):
         model=IMAGEN_MODEL,
         prompt=prompt,
         config=dict(
-            number_of_images=3,
+            number_of_images=2,
             output_mime_type="image/jpeg",
             person_generation="ALLOW_ADULT",
             aspect_ratio=aspect_ratio,
