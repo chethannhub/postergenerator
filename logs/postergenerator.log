@@ -1,0 +1,258 @@
+[2025-09-16 20:19:03] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:19:03] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:19:07] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\routes\\base.py', reloading
+[2025-09-16 20:19:07] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\routes\\base.py', reloading
+[2025-09-16 20:19:13] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:19:13] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:19:24] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\routes\\enhance.py', reloading
+[2025-09-16 20:19:24] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\routes\\enhance.py', reloading
+[2025-09-16 20:19:30] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:19:30] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:19:45] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\routes\\generate.py', reloading
+[2025-09-16 20:19:45] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\routes\\generate.py', reloading
+[2025-09-16 20:19:51] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:19:51] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:19:59] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\services\\imagen.py', reloading
+[2025-09-16 20:19:59] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\services\\imagen.py', reloading
+[2025-09-16 20:20:06] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:20:06] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:20:24] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\services\\gemini.py', reloading
+[2025-09-16 20:20:24] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\services\\gemini.py', reloading
+[2025-09-16 20:20:31] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:20:31] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:20:33] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\persistence\\history.py', reloading
+[2025-09-16 20:20:33] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\persistence\\history.py', reloading
+[2025-09-16 20:20:40] [INFO] [-] app.persistence.history: Loaded history entries: 9
+[2025-09-16 20:20:40] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:20:40] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:21:55] [INFO] [f1022b8a] app.request: ▶ GET /
+[2025-09-16 20:21:55] [INFO] [f1022b8a] app.request: ◀ GET / 200 773ms
+[2025-09-16 20:21:55] [INFO] [f1022b8a] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:21:55] "GET / HTTP/1.1" 200 -
+[2025-09-16 20:21:55] [INFO] [4e310d81] app.request: ▶ GET /static/css/main.css
+[2025-09-16 20:21:56] [INFO] [4e310d81] app.request: ◀ GET /static/css/main.css 304 330ms
+[2025-09-16 20:21:56] [INFO] [4e310d81] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:21:56] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[2025-09-16 20:22:02] [INFO] [ed430a83] app.request: ▶ POST /enhance
+[2025-09-16 20:22:02] [INFO] [ed430a83] app.routes.enhance: Enhance request received (aspect=9:16)
+[2025-09-16 20:22:02] [INFO] [ed430a83] app.services.gemini: Enhancing prompt (len=260)
+[2025-09-16 20:22:02] [INFO] [ed430a83] google_genai.models: AFC is enabled with max remote calls: 10.
+[2025-09-16 20:22:02] [INFO] [ed430a83] google_genai.models: AFC remote call 1 is done.
+[2025-09-16 20:22:22] [INFO] [ed430a83] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+[2025-09-16 20:22:28] [INFO] [ed430a83] app.services.gemini: Suggesting objects/colors
+[2025-09-16 20:22:28] [INFO] [ed430a83] google_genai.models: AFC is enabled with max remote calls: 10.
+[2025-09-16 20:22:28] [INFO] [ed430a83] google_genai.models: AFC remote call 1 is done.
+[2025-09-16 20:22:29] [INFO] [ed430a83] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+[2025-09-16 20:22:30] [INFO] [ed430a83] google_genai.models: AFC is enabled with max remote calls: 10.
+[2025-09-16 20:22:30] [INFO] [ed430a83] google_genai.models: AFC remote call 1 is done.
+[2025-09-16 20:22:31] [INFO] [ed430a83] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+[2025-09-16 20:22:31] [WARNING] [ed430a83] app.services.gemini: Failed to parse objects JSON; response truncated to 120 chars: ```json
+[
+  "Gold flakes",
+  "Starry night sky (implied)",
+  "Dark orchid",
+  "Diamond dust",
+  "Teal feather",
+  "Smoke
+[2025-09-16 20:22:31] [WARNING] [ed430a83] app.services.gemini: Failed to parse colors JSON; response truncated to 120 chars: ```json
+[
+  "charcoal, teal, and gold",
+  "matte black and radiant gold",
+  "smoked glass and deep teal",
+  "polished go
+[2025-09-16 20:22:32] [INFO] [ed430a83] app.request: ◀ POST /enhance 200 30128ms
+[2025-09-16 20:22:32] [INFO] [ed430a83] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:22:32] "POST /enhance HTTP/1.1" 200 -
+[2025-09-16 20:22:32] [INFO] [1524497f] app.request: ▶ GET /static/css/main.css
+[2025-09-16 20:22:32] [INFO] [1524497f] app.request: ◀ GET /static/css/main.css 304 2ms
+[2025-09-16 20:22:32] [INFO] [1524497f] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:22:32] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[2025-09-16 20:22:37] [INFO] [e0f1c97f] app.request: ▶ POST /generate
+[2025-09-16 20:22:37] [INFO] [e0f1c97f] app.routes.generate: Generate called (aspect=9:16)
+[2025-09-16 20:22:37] [INFO] [e0f1c97f] app.services.imagen: Requesting images (aspect=9:16)
+[2025-09-16 20:22:55] [INFO] [e0f1c97f] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-preview-06-06:predict "HTTP/1.1 200 OK"
+[2025-09-16 20:23:10] [INFO] [e0f1c97f] app.services.imagen: Decoded 2 images
+[2025-09-16 20:23:10] [INFO] [e0f1c97f] app.routes.generate: Generated 2 base posters
+[2025-09-16 20:23:11] [INFO] [e0f1c97f] app.request: ◀ POST /generate 200 34320ms
+[2025-09-16 20:23:11] [INFO] [e0f1c97f] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:23:11] "POST /generate HTTP/1.1" 200 -
+[2025-09-16 20:23:11] [INFO] [16ddcab7] app.request: ▶ GET /static/css/main.css
+[2025-09-16 20:23:11] [INFO] [16ddcab7] app.request: ◀ GET /static/css/main.css 304 1ms
+[2025-09-16 20:23:11] [INFO] [16ddcab7] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:23:11] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[2025-09-16 20:23:29] [INFO] [16ddcab7] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\logging_config.py', reloading
+[2025-09-16 20:23:29] [INFO] [16ddcab7] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\logging_config.py', reloading
+[2025-09-16 20:23:31] [DEBUG] [-] app.logging_config: Logging configured at level DEBUG
+[2025-09-16 20:23:38] [INFO] [-] app.persistence.history: Loaded history entries: 9
+[2025-09-16 20:23:38] [WARNING] [-] werkzeug:  * Debugger is active!
+[2025-09-16 20:23:38] [INFO] [-] werkzeug:  * Debugger PIN: 993-643-871
+[2025-09-16 20:23:42] [DEBUG] [-] app.logging_config: Logging configured at level DEBUG
+[2025-09-16 20:23:45] [INFO] [-] app.persistence.history: Loaded history entries: 9
+[2025-09-16 20:24:08] [DEBUG] [-] app.logging_config: Logging configured at level DEBUG
+[2025-09-16 20:24:11] [INFO] [-] app.persistence.history: Loaded history entries: 9
+[2025-09-16 20:24:11] [INFO] [-] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5050
+[2025-09-16 20:24:11] [INFO] [-] werkzeug: [33mPress CTRL+C to quit[0m
+[2025-09-16 20:25:56] [INFO] [66fb3d25] app.request: ▶ GET /
+[2025-09-16 20:25:56] [DEBUG] [66fb3d25] app.routes.base: Rendering landing page
+[2025-09-16 20:25:56] [INFO] [66fb3d25] app.request: ◀ GET / 200 54ms
+[2025-09-16 20:25:56] [INFO] [66fb3d25] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:25:56] "GET / HTTP/1.1" 200 -
+[2025-09-16 20:25:56] [INFO] [a157411c] app.request: ▶ GET /static/css/main.css
+[2025-09-16 20:25:56] [INFO] [a157411c] app.request: ◀ GET /static/css/main.css 200 113ms
+[2025-09-16 20:25:56] [INFO] [a157411c] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:25:56] "GET /static/css/main.css HTTP/1.1" 200 -
+[2025-09-16 20:25:57] [INFO] [d4d914f6] app.request: ▶ GET /favicon.ico
+[2025-09-16 20:25:57] [INFO] [d4d914f6] app.request: ◀ GET /favicon.ico 404 29ms
+[2025-09-16 20:25:57] [INFO] [d4d914f6] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:25:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-09-16 20:26:10] [INFO] [06f1fbc9] app.request: ▶ POST /enhance
+[2025-09-16 20:26:10] [INFO] [06f1fbc9] app.routes.enhance: Enhance request received (aspect=9:16)
+[2025-09-16 20:26:10] [INFO] [06f1fbc9] app.services.gemini: Enhancing prompt (len=4)
+[2025-09-16 20:26:10] [INFO] [06f1fbc9] google_genai.models: AFC is enabled with max remote calls: 10.
+[2025-09-16 20:26:11] [INFO] [06f1fbc9] google_genai.models: AFC remote call 1 is done.
+[2025-09-16 20:26:11] [DEBUG] [06f1fbc9] httpcore.connection: connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+[2025-09-16 20:26:12] [DEBUG] [06f1fbc9] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000195379AA720>
+[2025-09-16 20:26:12] [DEBUG] [06f1fbc9] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019537E6C9D0> server_hostname='generativelanguage.googleapis.com' timeout=None
+[2025-09-16 20:26:13] [DEBUG] [06f1fbc9] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019537EEE420>
+[2025-09-16 20:26:13] [DEBUG] [06f1fbc9] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2025-09-16 20:26:13] [DEBUG] [06f1fbc9] httpcore.http11: send_request_headers.complete
+[2025-09-16 20:26:13] [DEBUG] [06f1fbc9] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2025-09-16 20:26:13] [DEBUG] [06f1fbc9] httpcore.http11: send_request_body.complete
+[2025-09-16 20:26:13] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/event-stream'), (b'Content-Disposition', b'attachment'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Transfer-Encoding', b'chunked'), (b'Date', b'Tue, 16 Sep 2025 14:56:16 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=3407'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000')])
+[2025-09-16 20:26:17] [INFO] [06f1fbc9] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_body.complete
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: response_closed.started
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: response_closed.complete
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] app.services.gemini: Enhanced prompt produced (len=195)
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] app.routes.enhance: Enhanced prompt length=195
+[2025-09-16 20:26:17] [INFO] [06f1fbc9] app.services.gemini: Suggesting objects/colors
+[2025-09-16 20:26:17] [INFO] [06f1fbc9] google_genai.models: AFC is enabled with max remote calls: 10.
+[2025-09-16 20:26:17] [INFO] [06f1fbc9] google_genai.models: AFC remote call 1 is done.
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: send_request_headers.complete
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: send_request_body.complete
+[2025-09-16 20:26:17] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2025-09-16 20:26:18] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/event-stream'), (b'Content-Disposition', b'attachment'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Transfer-Encoding', b'chunked'), (b'Date', b'Tue, 16 Sep 2025 14:56:18 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=658'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000')])
+[2025-09-16 20:26:18] [INFO] [06f1fbc9] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+[2025-09-16 20:26:18] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_body.complete
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: response_closed.started
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: response_closed.complete
+[2025-09-16 20:26:19] [INFO] [06f1fbc9] google_genai.models: AFC is enabled with max remote calls: 10.
+[2025-09-16 20:26:19] [INFO] [06f1fbc9] google_genai.models: AFC remote call 1 is done.
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: send_request_headers.complete
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: send_request_body.complete
+[2025-09-16 20:26:19] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2025-09-16 20:26:20] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/event-stream'), (b'Content-Disposition', b'attachment'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Transfer-Encoding', b'chunked'), (b'Date', b'Tue, 16 Sep 2025 14:56:19 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=637'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000')])
+[2025-09-16 20:26:20] [INFO] [06f1fbc9] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+[2025-09-16 20:26:20] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2025-09-16 20:26:20] [DEBUG] [06f1fbc9] httpcore.http11: receive_response_body.complete
+[2025-09-16 20:26:20] [DEBUG] [06f1fbc9] httpcore.http11: response_closed.started
+[2025-09-16 20:26:20] [DEBUG] [06f1fbc9] httpcore.http11: response_closed.complete
+[2025-09-16 20:26:20] [WARNING] [06f1fbc9] app.services.gemini: Failed to parse objects JSON; response truncated to 120 chars: ```json
+[
+  "Fractured clock",
+  "Melting ice caps",
+  "Barren tree silhouette",
+  "Overlapping city skylines (old and n
+[2025-09-16 20:26:20] [WARNING] [06f1fbc9] app.services.gemini: Failed to parse colors JSON; response truncated to 120 chars: ```json
+[
+  "navy blue and silver",
+  "burnt orange and cream",
+  "forest green and muted gold",
+  "dusty rose and charc
+[2025-09-16 20:26:20] [INFO] [06f1fbc9] app.request: ◀ POST /enhance 200 9947ms
+[2025-09-16 20:26:20] [INFO] [06f1fbc9] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:26:20] "POST /enhance HTTP/1.1" 200 -
+[2025-09-16 20:26:20] [INFO] [19eebfbe] app.request: ▶ GET /static/css/main.css
+[2025-09-16 20:26:20] [INFO] [19eebfbe] app.request: ◀ GET /static/css/main.css 304 2ms
+[2025-09-16 20:26:20] [INFO] [19eebfbe] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:26:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[2025-09-16 20:29:40] [INFO] [52f9d749] app.request: ▶ POST /generate
+[2025-09-16 20:29:40] [INFO] [52f9d749] app.routes.generate: Generate called (aspect=9:16)
+[2025-09-16 20:29:40] [INFO] [52f9d749] app.services.imagen: Requesting images (aspect=9:16)
+[2025-09-16 20:29:40] [DEBUG] [52f9d749] httpcore.connection: connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+[2025-09-16 20:29:41] [DEBUG] [52f9d749] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019537F88B30>
+[2025-09-16 20:29:41] [DEBUG] [52f9d749] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019537F01350> server_hostname='generativelanguage.googleapis.com' timeout=None
+[2025-09-16 20:29:42] [DEBUG] [52f9d749] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019537F88350>
+[2025-09-16 20:29:42] [DEBUG] [52f9d749] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2025-09-16 20:29:42] [DEBUG] [52f9d749] httpcore.http11: send_request_headers.complete
+[2025-09-16 20:29:42] [DEBUG] [52f9d749] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2025-09-16 20:29:42] [DEBUG] [52f9d749] httpcore.http11: send_request_body.complete
+[2025-09-16 20:29:42] [DEBUG] [52f9d749] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2025-09-16 20:29:54] [DEBUG] [52f9d749] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Tue, 16 Sep 2025 14:59:53 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=11452'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+[2025-09-16 20:29:54] [INFO] [52f9d749] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-preview-06-06:predict "HTTP/1.1 200 OK"
+[2025-09-16 20:29:54] [DEBUG] [52f9d749] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2025-09-16 20:30:07] [DEBUG] [52f9d749] httpcore.http11: receive_response_body.complete
+[2025-09-16 20:30:07] [DEBUG] [52f9d749] httpcore.http11: response_closed.started
+[2025-09-16 20:30:07] [DEBUG] [52f9d749] httpcore.http11: response_closed.complete
+[2025-09-16 20:30:07] [INFO] [52f9d749] app.services.imagen: Decoded 2 images
+[2025-09-16 20:30:07] [INFO] [52f9d749] app.routes.generate: Generated 2 base posters
+[2025-09-16 20:30:09] [DEBUG] [52f9d749] app.persistence.history: Saved history entries: 9
+[2025-09-16 20:30:09] [DEBUG] [52f9d749] app.routes.generate: Posters saved to history (count=2)
+[2025-09-16 20:30:10] [INFO] [52f9d749] app.request: ◀ POST /generate 200 29764ms
+[2025-09-16 20:30:10] [INFO] [52f9d749] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:30:10] "POST /generate HTTP/1.1" 200 -
+[2025-09-16 20:30:10] [INFO] [aedd36aa] app.request: ▶ GET /static/css/main.css
+[2025-09-16 20:30:10] [INFO] [aedd36aa] app.request: ◀ GET /static/css/main.css 304 17ms
+[2025-09-16 20:30:10] [INFO] [aedd36aa] werkzeug: 127.0.0.1 - - [16/Sep/2025 20:30:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[2025-09-16 20:30:17] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\logging_config.py', reloading
+[2025-09-16 20:30:17] [INFO] [-] werkzeug:  * Detected change in 'E:\\postergenerator\\app\\logging_config.py', reloading
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+INFO app.persistence.history: Loaded history entries: 9
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Logging ready (level=DEBUG)
+
+WARNING werkzeug:  * Debugger is active!
+[2025-09-16 20:33:07] [DEBUG] [aedd36aa] httpcore.connection: close.started
+[2025-09-16 20:33:07] [DEBUG] [aedd36aa] httpcore.connection: close.complete
+[2025-09-16 20:33:07] [DEBUG] [aedd36aa] httpcore.connection: close.started
+[2025-09-16 20:33:07] [DEBUG] [aedd36aa] httpcore.connection: close.complete
+INFO app.main: ▶ GET /
+
+INFO app.main: ◀ GET / 200
+
+INFO app.main: ▶ GET /static/css/main.css
+
+INFO app.main: ◀ GET /static/css/main.css 304
+
+INFO app.main: Logging ready (level=DEBUG)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!

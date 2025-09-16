@@ -105,6 +105,16 @@
             background-clip: text;
         }
 
+        /* Brand text styling for header logo */
+        .logo-text {
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
         /* Main Container */
         .container {
             max-width: 1200px;

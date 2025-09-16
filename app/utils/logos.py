@@ -9,8 +9,12 @@ dotenv.load_dotenv()
 # Configurable directories via environment variables
 LOGO_DIR = os.getenv('LOGO_DIR', os.path.join(os.getcwd(), 'KALA'))
 WATERMARK_LOGO = os.getenv('WATERMARK_LOGO', 'kala.png')
+DISABLE_LOGO_OVERLAY = os.getenv('DISABLE_LOGO_OVERLAY', 'false').strip().lower() in ('1', 'true', 'yes', 'on')
 
 def overlay_logo(poster, logo, position, scale):
+    # Feature-flag: allow temporarily disabling logo overlay without code changes
+    if DISABLE_LOGO_OVERLAY:
+        return poster
     logo = logo.convert("RGBA")
     logo_width = int(poster.width * scale)
     logo_height = int(logo.height * (logo_width / logo.width))
@@ -47,6 +51,9 @@ def get_logo_xy(pos, poster, logo, scale=0.25):
     return (margin_x, margin_y)
 
 def add_watermark(input_image):
+    # Honor the same flag for watermarking as well
+    if DISABLE_LOGO_OVERLAY:
+        return input_image
     try:
         poster = input_image.convert("RGBA")
         watermark_path = WATERMARK_LOGO if os.path.isabs(WATERMARK_LOGO) else os.path.join(os.getcwd(), WATERMARK_LOGO)

@@ -21,5 +21,4 @@ def save_history():
         with open(HISTORY_FILE, 'w', encoding='utf-8') as f:
             json.dump(generation_history, f, ensure_ascii=False, indent=2)
     except Exception:
-        # Silently ignore write errors for now; could log instead.
         pass
