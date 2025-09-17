@@ -3,7 +3,7 @@ from io import BytesIO
 from PIL import Image
 from google import genai
 
-CLIENT = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+CLIENT = genai.Client(api_key=os.environ.get("GEMINI_API_KEY_BILLED"))
 
 IMAGEN_MODEL = "models/imagen-4.0-generate-preview-06-06"
 

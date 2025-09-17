@@ -8,3 +8,5 @@ generation_history.json
 .venev/
 __pycache__/
 venv/
+logs/
+.log
