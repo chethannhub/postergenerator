@@ -1,6 +1,6 @@
 import os, base64
 from io import BytesIO
-from flask import Blueprint, request, render_template, jsonify
+from flask import Blueprint, flash, request, render_template, jsonify
 from PIL import Image
 from ..services.imagen import generate_poster
 from ..utils.logos import overlay_logo, get_logo_xy, LOGO_DIR, DISABLE_LOGO_OVERLAY
@@ -10,14 +10,24 @@ bp = Blueprint('generate', __name__)
 
 @bp.route('/generate', methods=['POST'])
 def generate():
+    print("\ngenerate called")
+    
     enhanced_prompt = request.form.get('enhanced_prompt', '').strip()
     prompt = request.form.get('prompt', '').strip()
     aspect_ratio = request.form.get('aspect_ratio', '9:16')
     __import__('logging').getLogger('app.main').info('Generate: start (aspect=%s)\n', aspect_ratio)
-    return step4_with_default_logos(enhanced_prompt, prompt, aspect_ratio)
-
-def step4_with_default_logos(enhanced_prompt, prompt, aspect_ratio):
+    
+    if not enhanced_prompt:
+        flash('Enhanced prompt is required.')
+        return render_template('enhance.html', original_prompt=prompt)
+    
     posters = generate_poster(enhanced_prompt, aspect_ratio)
+
+    return displayPosters_with_default_logos(posters, prompt, aspect_ratio)
+
+def displayPosters_with_default_logos(posters, prompt, aspect_ratio):
+    print("\ndisplayPosters_with_default_logos called")
+    
     poster_data = []
     # Discover up to two logos in LOGO_DIR for automatic overlay (unless disabled)
     discovered_logos = [] if DISABLE_LOGO_OVERLAY else []
@@ -55,6 +65,7 @@ def step4_with_default_logos(enhanced_prompt, prompt, aspect_ratio):
 
 @bp.route('/generate-poster', methods=['POST'])
 def generate_poster_route():
+    print("\ngenerate_poster_route called")
     try:
         if request.content_type and request.content_type.startswith('multipart/form-data'):
             prompt = request.form.get('prompt', '')
@@ -89,6 +100,4 @@ def generate_poster_route():
         __import__('logging').getLogger('app.main').error('Generate API: error %s\n', e)
         return jsonify({'error': str(e)}), 500
 
-@bp.route('/overlay-logo', methods=['POST'])
-def overlay_logo_route():
-    return jsonify({'message': 'Not implemented'}), 501
+

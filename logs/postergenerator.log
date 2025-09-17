@@ -380,3 +380,765 @@ INFO app.main: Generate: done (0 posters)
 
 WARNING werkzeug:  * Debugger is active!
 WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+INFO app.main: Enhance: done
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=9:16)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING app.main: Gemini image model "models/gemini-2.5-flash-image-preview" not available for generate_images; falling back to Imagen. Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-image-preview is not found for API version v1beta, or is not supported for predict. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING app.main: Gemini image model "gemini-2.5-flash-image-preview" not available for generate_images; falling back to Imagen. Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-image-preview is not found for API version v1beta, or is not supported for predict. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING app.main: Gemini image model "gemini-2.5-flash-image-preview" not available for generate_images; falling back to Imagen. Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-image-preview is not found for API version v1beta, or is not supported for predict. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+INFO app.main: Generate: done (2 posters)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING app.main: Gemini image model "gemini-2.5-flash-image-preview" not available for generate_images; falling back to Imagen. Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-image-preview is not found for API version v1beta, or is not supported for predict. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: done
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: OpenAI Eval: start; variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: OpenAI Eval: start; variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: OpenAI Eval: start; variants=3
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x2010a1213a0 state=finished raised TypeError>]), using first available prompt
+
+INFO app.main: Enhance: done -> generated posters (2)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x271f2ea5610 state=finished raised TypeError>]), using first available prompt
+
+INFO app.main: Enhance: done -> generated posters (2)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x2d73bdfd760 state=finished raised TypeError>]), using first available prompt
+
+INFO app.main: Enhance: done -> generated posters (2)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x1380b54ea20 state=finished raised TypeError>]), using first available prompt
+
+WARNING app.main: Gemini image model "gemini-2.5-flash-image-preview" not available for generate_images; falling back to Imagen. Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-image-preview is not found for API version v1beta, or is not supported for predict. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+INFO app.main: Enhance: done -> generated posters (2)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: single enhanced prompt generated
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+ERROR app.main: Enhance: error generating enhanced prompt: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO app.main: Enhance: done -> redirecting to suggestions page
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO app.main: Enhance: done -> redirecting to suggestions page
+
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: done (0 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: start (aspect=)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: done (0 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: done (0 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: done (0 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: done (0 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO app.main: Enhance: done -> redirecting to suggestions page
+
+INFO app.main: Generate: start (aspect=)
+
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+ERROR app.main: Enhance: error generating enhanced prompt: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x2745e612090 state=finished raised TypeError>]), using first available prompt
+
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+ERROR app.main: Enhance: error generating variants: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=0
+DEBUG app.main: OpenAI Eval: filtered variants=0
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=0
+DEBUG app.main: OpenAI Eval: filtered variants=0
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=0
+DEBUG app.main: OpenAI Eval: filtered variants=0
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x21671f18e00 state=finished raised ValueError>]), using first available prompt
+
+ERROR app.main: Enhance: image generation failed: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (RetryError[<Future at 0x257b5cd1490 state=finished raised TypeError>]), using first available prompt
+
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (Client.__init__() got an unexpected keyword argument 'proxies'), using first available prompt
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (Client.__init__() got an unexpected keyword argument 'proxies'), using first available prompt
+
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+WARNING app.main: Enhance: evaluation failed (Responses.create() got an unexpected keyword argument 'Input'), using first available prompt
+
+ERROR app.main: Enhance: image generation failed: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG openai._base_client: Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-030a256b-4580-4a49-aeb8-d192c5ab5366', 'json_data': {'input': 'I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all\xa0our\xa0customers.', 'instructions': 'You are a senior prompt engineer and creative director. Your task is to evaluate multiple enhanced prompt candidates intended for generating professional posters with Google\'s Imagen 4 model.\n\nJudge each candidate on:\n1. Intent fidelity: Does it align with the user\'s goal?\n2. Clarity & specificity: Is it unambiguous and production-ready?\n3. Plausibility: Is the scene logical and physically coherent for the intended audience?\n4. Professional design guidance: Does it demonstrate agency-grade craft (layout, focal hierarchy, whitespace, contrast, alignment), and useful visual direction (style, materials, lighting, composition)?\n5. Safety and constraints: Explicitly avoids rendering text/logos/brands/QR codes/signatures/UI overlays; if photographic, avoids uncanny faces/hands; follows any implied packshot guardrails.\n\nScoring:\nScore each candidate from 0.0 to 10.0 (one decimal), considering all criteria above.\nPrefer concise, highly usable prompts over verbose but unfocused ones.\nIf two candidates are tied, pick the one with clearer composition and safer constraints.\n\nOutput requirements:\nReturn ONLY valid JSON with this exact structure: { "scores": [ { "prompt": string, "score": number, // 0.0-10.0 "rationale": string, // 1-2 crisp sentences "violations": string[] // zero or more labels: ["contains_text_request", "illogical_scene", "brand_logo_request", "vague", "meta_instructions", "safety_risk"] } ], "best": string // must be one of the input candidates }\nNo markdown, no extra prose, no trailing text. JSON object only.\n', 'model': 'gpt-4o-mini'}}
+DEBUG openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/responses
+DEBUG openai._base_client: HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Wed, 17 Sep 2025 14:35:31 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '30000'), ('x-ratelimit-limit-tokens', '150000000'), ('x-ratelimit-remaining-requests', '29999'), ('x-ratelimit-remaining-tokens', '149999580'), ('x-ratelimit-reset-requests', '2ms'), ('x-ratelimit-reset-tokens', '0s'), ('openai-version', '2020-10-01'), ('openai-organization', 'pinoxio'), ('openai-project', 'proj_3fEYNhsxfAVYI4FH47z9au6Q'), ('x-request-id', 'req_ffa03bffa25d9cc6ac6758aef627ebbd'), ('openai-processing-ms', '6159'), ('x-envoy-upstream-service-time', '6170'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=KCiRUF2wn0ZTDFNTeJQbzDTmLreR.igcs7QZKMuW8P8-1758119731-1.0.1.1-c028ujEhpwkpc7m7pimI91p01ML.N6nIIV_ok7u2ouYBcPvBWKDMXDm0GCsXe5xXDRznuZiz8X.VlY3VSYNHZKb_igGEogSo20gmCiiCI14; path=/; expires=Wed, 17-Sep-25 15:05:31 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=PTZpidGHhQl_OjLW3JvZwIQbY_UsC0aV.oJjQiEN4uA-1758119731953-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9809546feaed3212-BOM'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+DEBUG openai._base_client: request_id: req_ffa03bffa25d9cc6ac6758aef627ebbd
+WARNING app.main: Enhance: evaluation failed ('Response' object has no attribute 'choices'), using first available prompt
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG openai._base_client: Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-86284800-7b40-41ff-b3eb-e1b39f15421b', 'json_data': {'input': 'I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all\xa0our\xa0customers.', 'instructions': 'You are a senior prompt engineer and creative director. Your task is to evaluate multiple enhanced prompt candidates intended for generating professional posters with Google\'s Imagen 4 model.\n\nJudge each candidate on:\n1. Intent fidelity: Does it align with the user\'s goal?\n2. Clarity & specificity: Is it unambiguous and production-ready?\n3. Plausibility: Is the scene logical and physically coherent for the intended audience?\n4. Professional design guidance: Does it demonstrate agency-grade craft (layout, focal hierarchy, whitespace, contrast, alignment), and useful visual direction (style, materials, lighting, composition)?\n5. Safety and constraints: Explicitly avoids rendering text/logos/brands/QR codes/signatures/UI overlays; if photographic, avoids uncanny faces/hands; follows any implied packshot guardrails.\n\nScoring:\nScore each candidate from 0.0 to 10.0 (one decimal), considering all criteria above.\nPrefer concise, highly usable prompts over verbose but unfocused ones.\nIf two candidates are tied, pick the one with clearer composition and safer constraints.\n\nOutput requirements:\nReturn ONLY valid JSON with this exact structure: { "scores": [ { "prompt": string, "score": number, // 0.0-10.0 "rationale": string, // 1-2 crisp sentences "violations": string[] // zero or more labels: ["contains_text_request", "illogical_scene", "brand_logo_request", "vague", "meta_instructions", "safety_risk"] } ], "best": string // must be one of the input candidates }\nNo markdown, no extra prose, no trailing text. JSON object only.\n', 'model': 'gpt-4o-mini'}}
+DEBUG openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/responses
+DEBUG openai._base_client: HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Wed, 17 Sep 2025 15:45:51 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '30000'), ('x-ratelimit-limit-tokens', '150000000'), ('x-ratelimit-remaining-requests', '29999'), ('x-ratelimit-remaining-tokens', '149999577'), ('x-ratelimit-reset-requests', '2ms'), ('x-ratelimit-reset-tokens', '0s'), ('openai-version', '2020-10-01'), ('openai-organization', 'pinoxio'), ('openai-project', 'proj_3fEYNhsxfAVYI4FH47z9au6Q'), ('x-request-id', 'req_80c83091ad69227a12fabe45b30409fc'), ('openai-processing-ms', '7400'), ('x-envoy-upstream-service-time', '7404'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=5NqFJNvnPGCi_8eFiuu3QojHMIHBtwUYjRmnSB8Stc8-1758123951-1.0.1.1-uYVZQMRthLl.wRa8sCssIZr32fM4G9RvFBKHhEZ08RRyyf6q1_qldqKPVXQ.8n8AYadIjN1KVKk0pdv.GsjxHCxgBeFh02j8UGz.VMeFF3Q; path=/; expires=Wed, 17-Sep-25 16:15:51 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=HRwIxfRCIjKpDCEHxo9lw2YnexHBUqsBvmYh_iml_yc-1758123951152-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9809bb74aec47f7c-MAA'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+DEBUG openai._base_client: request_id: req_80c83091ad69227a12fabe45b30409fc
+DEBUG app.main: OpenAI Eval: raw response length=2
+DEBUG app.main: OpenAI Eval: raw response JSON={}
+DEBUG app.main: OpenAI Eval: parsed scores=0; best selected len=1354
+DEBUG app.main: OpenAI Eval: final JSON={"best": "A professional advertisement poster for 'Navdor,' a wedding wear showroom in Gachibowli, Hyderabad, showcasing the new 'Maharaja Collection.' The poster should convey a sense of regal elegance and opulence. The central visual features a sophisticated couple, a groom in a richly embroidered deep crimson and gold sherwani and a bride in a resplendent emerald green and gold lehenga, their hands gently clasped, embodying a modern yet traditional aesthetic. They are positioned centrally against a subtly textured background of deep teal with abstract, muted gold filigree patterns, evoking a luxurious Indian palace ambiance. The lighting is soft and dramatic, highlighting the intricate details of the attire with a gentle glow. A clean, empty safe area is reserved at the bottom for future text and branding. The color palette consists of deep crimson, emerald green, opulent gold, deep teal, and a sophisticated off-white for negative space. The style is photorealistic with agency-grade craft, featuring a balanced composition, clear focal hierarchy, and generous whitespace. The target audience is affluent couples seeking high-end wedding attire. Negative prompt: letters, text, words, numbers, typography, captions, subtitles, logos, brand names, company names, watermarks, stamps, signatures, UI overlays, QR codes, banners, signs, Happy Dassara."}
+DEBUG app.main: OpenAI Eval: done
+INFO app.main: Enhance: selected best prompt via OpenAI evaluation
+
+ERROR app.main: Enhance: image generation failed: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG openai._base_client: Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-438f84bc-b8cd-4ec0-a2cd-4495505091d0', 'json_data': {'input': 'I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all\xa0our\xa0customers.', 'instructions': 'You are a senior prompt engineer and creative director. Your task is to evaluate multiple enhanced prompt candidates intended for generating professional posters with Google\'s Imagen 4 model.\n\nJudge each candidate on:\n1. Intent fidelity: Does it align with the user\'s goal?\n2. Clarity & specificity: Is it unambiguous and production-ready?\n3. Plausibility: Is the scene logical and physically coherent for the intended audience?\n4. Professional design guidance: Does it demonstrate agency-grade craft (layout, focal hierarchy, whitespace, contrast, alignment), and useful visual direction (style, materials, lighting, composition)?\n5. Safety and constraints: Explicitly avoids rendering text/logos/brands/QR codes/signatures/UI overlays; if photographic, avoids uncanny faces/hands; follows any implied packshot guardrails.\n\nScoring:\nScore each candidate from 0.0 to 10.0 (one decimal), considering all criteria above.\nPrefer concise, highly usable prompts over verbose but unfocused ones.\nIf two candidates are tied, pick the one with clearer composition and safer constraints.\n\nOutput requirements:\nReturn ONLY valid JSON with this exact structure: { "scores": [ { "prompt": string, "score": number, // 0.0-10.0 "rationale": string, // 1-2 crisp sentences "violations": string[] // zero or more labels: ["contains_text_request", "illogical_scene", "brand_logo_request", "vague", "meta_instructions", "safety_risk"] } ], "best": string // must be one of the input candidates }\nNo markdown, no extra prose, no trailing text. JSON object only.\n', 'model': 'gpt-4o-mini'}}
+DEBUG openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/responses
+DEBUG openai._base_client: HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Wed, 17 Sep 2025 16:09:54 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '30000'), ('x-ratelimit-limit-tokens', '150000000'), ('x-ratelimit-remaining-requests', '29999'), ('x-ratelimit-remaining-tokens', '149999580'), ('x-ratelimit-reset-requests', '2ms'), ('x-ratelimit-reset-tokens', '0s'), ('openai-version', '2020-10-01'), ('openai-organization', 'pinoxio'), ('openai-project', 'proj_3fEYNhsxfAVYI4FH47z9au6Q'), ('x-request-id', 'req_9f8ac76ff256dad36b9a2fff7a3fd945'), ('openai-processing-ms', '2141'), ('x-envoy-upstream-service-time', '2150'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=vRXA8fOxw4kpLTkFUMG_24S3NXl1K35iZ0LNnYH9cEw-1758125394-1.0.1.1-ypFIcJ2FQKLHu_HTqVNy_I.YVAEyofruqkxIzSavjH86JBSsZ7p6djkYHO3bArjofKvuFl_5EzHTzADcCQ9nomYiUUnaxk9mp6HyZAKhmyo; path=/; expires=Wed, 17-Sep-25 16:39:54 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=WoqfGbuY42eKHSewzVcrcLCIC7GeEYaoF9GELNh73d0-1758125394232-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9809decb0e75936e-MAA'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+DEBUG openai._base_client: request_id: req_9f8ac76ff256dad36b9a2fff7a3fd945
+DEBUG app.main: OpenAI Eval: raw response length=2
+DEBUG app.main: OpenAI Eval: raw response JSON={}
+DEBUG app.main: OpenAI Eval: parsed scores=0; best selected len=1586
+DEBUG app.main: OpenAI Eval: final JSON={"best": "A sophisticated advertisement poster for Navdor, a wedding wear showroom in Gachibowli, Hyderabad, announcing their new Maharaja Collection and a 30% discount on couple pairs until October 10th, celebrating the spirit of Dassara. The poster features a regal Indian couple, elegantly dressed in opulent Maharaja-inspired wedding attire, exuding grace and joy. The style is contemporary luxury with a hint of traditional Indian aesthetics, rendered with photorealistic detail. The background is a deep, velvety royal blue with subtle gold intricate patterns reminiscent of traditional Indian textiles, providing a rich and luxurious ambiance. The composition is centered around the couple, with the male figure on the left and the female figure on the right, their hands gently touching, creating a focal point of connection and harmony. Generous negative space frames the couple, ensuring high readability. The color palette is dominated by deep royal blue, rich gold, and the vibrant jewel tones of the couple's attire, accented with touches of ivory. Materials suggested are silk, embroidered velvet, and polished gold accents. The overall quality is agency-grade, with studio lighting that highlights the textures and details of the garments, a shallow depth of field to softly blur the background, and a clean, professional finish. A blank safe area is reserved on the bottom for additional copy. Negative prompt: letters, text, words, numbers, typography, captions, subtitles, logos, brand names, company names, watermarks, stamps, signatures, UI overlays, QR codes, banners, signs."}
+DEBUG app.main: OpenAI Eval: done
+INFO app.main: Enhance: selected best prompt via OpenAI evaluation
+
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG openai._base_client: Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-eb919593-0402-4ab2-a81e-f8710f9165e2', 'json_data': {'input': [{'role': 'user', 'content': [{'type': 'input_text', 'text': 'I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all\xa0our\xa0customers.'}]}], 'instructions': 'You are a senior prompt engineer and creative director. Your task is to evaluate multiple enhanced prompt candidates intended for generating professional posters with Google\'s Imagen 4 model.\n\nJudge each candidate on:\n1. Intent fidelity: Does it align with the user\'s goal?\n2. Clarity & specificity: Is it unambiguous and production-ready?\n3. Plausibility: Is the scene logical and physically coherent for the intended audience?\n4. Professional design guidance: Does it demonstrate agency-grade craft (layout, focal hierarchy, whitespace, contrast, alignment), and useful visual direction (style, materials, lighting, composition)?\n5. Safety and constraints: Explicitly avoids rendering text/logos/brands/QR codes/signatures/UI overlays; if photographic, avoids uncanny faces/hands; follows any implied packshot guardrails.\n\nScoring:\nScore each candidate from 0.0 to 10.0 (one decimal), considering all criteria above.\nPrefer concise, highly usable prompts over verbose but unfocused ones.\nIf two candidates are tied, pick the one with clearer composition and safer constraints.\n\nOutput requirements:\nReturn ONLY valid JSON with this exact structure: { "scores": [ { "prompt": string, "score": number, // 0.0-10.0 "rationale": string, // 1-2 crisp sentences "violations": string[] // zero or more labels: ["contains_text_request", "illogical_scene", "brand_logo_request", "vague", "meta_instructions", "safety_risk"] } ], "best": string // must be one of the input candidates }\nNo markdown, no extra prose, no trailing text. JSON object only.\n', 'model': 'gpt-4o-mini'}}
+DEBUG openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/responses
+DEBUG openai._base_client: HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Wed, 17 Sep 2025 16:31:01 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '30000'), ('x-ratelimit-limit-tokens', '150000000'), ('x-ratelimit-remaining-requests', '29999'), ('x-ratelimit-remaining-tokens', '149999580'), ('x-ratelimit-reset-requests', '2ms'), ('x-ratelimit-reset-tokens', '0s'), ('openai-version', '2020-10-01'), ('openai-organization', 'pinoxio'), ('openai-project', 'proj_3fEYNhsxfAVYI4FH47z9au6Q'), ('x-request-id', 'req_9ff8edd73b6425836398496cc2c8d711'), ('openai-processing-ms', '1626'), ('x-envoy-upstream-service-time', '1642'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=m9HasFKTOlloNk8a0.2jreEp4HEHqAbmWva3eRaGYx8-1758126661-1.0.1.1-pg6uUBiiVvWTBKasci68TwrQXEUt3OngxB9JSPREQIcCoD.8pj7vuDkMVuXNAf3oHJodKyLn9hV7l4yVg0l0xp1RpLBBjunXvTbBQJNnw04; path=/; expires=Wed, 17-Sep-25 17:01:01 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=yAEtMyrx7HUsy4xN6CizrZesSIpBknxhD1W8zhfrELg-1758126661209-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9809fdbeeb8a7ea6-MAA'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+DEBUG openai._base_client: request_id: req_9ff8edd73b6425836398496cc2c8d711
+DEBUG app.main: OpenAI Eval: raw response length=2
+DEBUG app.main: 
+OpenAI Eval: raw response JSON={}
+DEBUG app.main: OpenAI Eval: parsed scores=0; best selected len=0
+DEBUG app.main: OpenAI Eval: final JSON={"best": null}
+DEBUG app.main: OpenAI Eval: done
+INFO app.main: Enhance: selected best prompt via OpenAI evaluation
+
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=16:9)
+
+INFO app.main: Enhance: generated 3 variants
+
+DEBUG app.main: 
+OpenAI Eval: start; user_prompt=I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all our customers.
+DEBUG app.main: 
+OpenAI Eval: variants=3
+DEBUG app.main: OpenAI Eval: filtered variants=3
+DEBUG openai._base_client: Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-5c1feec3-276a-45cd-9ccb-cc2e5633c911', 'json_data': {'input': 'User prompt (goal):\nI am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja collection. We are offering 30% off on all couple pairs until October 10th. Happy Dassara to all\xa0our\xa0customers.\n\nCandidates - 3 prompts (JSON array of strings):\n["A sophisticated advertisement poster for Navdor, a wedding wear showroom in Gachibowli Hyderabad, promoting the new Maharaja collection. The visual features a regal, elegantly dressed Indian couple, exuding warmth and connection through subtle, authentic micro-expressions, posed against a backdrop of understated, luxurious Indian architectural motifs rendered in a muted color palette of deep maroon, muted gold, and cream. The composition is grid-based with ample whitespace, guiding the viewer\'s eye towards the couple as the clear focal point. A soft, diffused studio lighting highlights the intricate details of their attire, creating a sense of depth and quality. The overall aesthetic is modern-luxe with a hint of traditional Indian grandeur, emphasizing high visual impact and readability. A clean, blank safe area is reserved on the bottom for future text placement. Negative prompt: letters, text, words, numbers, typography, captions, subtitles, logos, brand names, company names, watermarks, stamps, signatures, UI overlays, QR codes, banners, signs.", "A vibrant, celebratory poster announcing Navdor\'s new Maharaja collection for wedding wear in Gachibowli Hyderabad. The central image is a stylized, illustrative depiction of a jubilant Indian couple in opulent wedding attire, symbolizing happiness and new beginnings. The background is a dynamic gradient of rich saffron and deep teal, overlaid with subtle, abstract representations of traditional Indian patterns, conveying a festive Dassara mood. The composition uses a balanced layout with clear hierarchy, drawing attention to the couple. The style is a modern flat design with crisp edges and a limited, bold color palette, ensuring high contrast and immediate visual appeal. Ample negative space surrounds the elements, contributing to a clean and professional finish. A blank safe area is maintained at the top for any upcoming text. Negative prompt: letters, text, words, numbers, typography, captions, subtitles, logos, brand names, company names, watermarks, stamps, signatures, UI overlays, QR codes, banners, signs.", "A premium promotional poster for Navdor\'s wedding wear showroom in Gachibowli Hyderabad, showcasing the Maharaja collection. The image presents a close-up, studio-quality photograph of a sophisticated Indian couple, their faces softly lit, hinting at joyous anticipation. They are positioned on the left side of the frame, leaving generous negative space on the right, which is a clean, soft beige. The background is a minimalist, textured gradient of charcoal grey transitioning to a lighter slate, providing strong contrast and a sense of refined elegance. The style is photorealistic with a shallow depth of field, focusing on the couple\'s attire and subtle interaction. The color scheme is restrained, utilizing shades of grey, beige, and deep jewel tones from the attire itself, evoking luxury and exclusivity. The layout adheres to a strict grid, ensuring excellent readability and a professional, agency-grade feel. A clear, blank safe area is designated on the right for text. Negative prompt: letters, text, words, numbers, typography, captions, subtitles, logos, brand names, company names, watermarks, stamps, signatures, UI overlays, QR codes, banners, signs."]\n\nIn these this, i want the best one that is most likely to produce a high-quality poster image that fulfills the user\'s intent, while adhering to all safety and design guidelines.\n\nScoring rubric (0-10):\n- Intent fidelity: Does it align with the user\'s goal?\n- Clarity & specificity: Is it unambiguous and production-ready?\n- Plausibility: Is the scene logical and physically coherent?\n- Design craft: Does it reflect professional poster design guidance?\n- Safety: Avoids text/logos/brands and respects constraints.\n\nReturn only the JSON object described in the system message, with one decimal scores and compact rationales. No additional text.', 'instructions': 'You are a senior prompt engineer and creative director. Your task is to evaluate multiple enhanced prompt candidates intended for generating professional posters with Google\'s Imagen 4 model.\n\nJudge each candidate on:\n1. Intent fidelity: Does it align with the user\'s goal?\n2. Clarity & specificity: Is it unambiguous and production-ready?\n3. Plausibility: Is the scene logical and physically coherent for the intended audience?\n4. Professional design guidance: Does it demonstrate agency-grade craft (layout, focal hierarchy, whitespace, contrast, alignment), and useful visual direction (style, materials, lighting, composition)?\n5. Safety and constraints: Explicitly avoids rendering text/logos/brands/QR codes/signatures/UI overlays; if photographic, avoids uncanny faces/hands; follows any implied packshot guardrails.\n\nScoring:\nScore each candidate from 0.0 to 10.0 (one decimal), considering all criteria above.\nPrefer concise, highly usable prompts over verbose but unfocused ones.\nIf two candidates are tied, pick the one with clearer composition and safer constraints.\n\nOutput requirements:\nReturn ONLY valid JSON with this exact structure: { "scores": [ { "prompt": string, "score": number, // 0.0-10.0 "rationale": string, // 1-2 crisp sentences "violations": string[] // zero or more labels: ["contains_text_request", "illogical_scene", "brand_logo_request", "vague", "meta_instructions", "safety_risk"] } ], "best": string // must be one of the input candidates }\nNo markdown, no extra prose, no trailing text. JSON object only.\n', 'model': 'gpt-4o-mini', 'temperature': 0.2}}
+DEBUG openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/responses
+DEBUG openai._base_client: HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Wed, 17 Sep 2025 16:44:50 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '30000'), ('x-ratelimit-limit-tokens', '150000000'), ('x-ratelimit-remaining-requests', '29999'), ('x-ratelimit-remaining-tokens', '149998785'), ('x-ratelimit-reset-requests', '2ms'), ('x-ratelimit-reset-tokens', '0s'), ('openai-version', '2020-10-01'), ('openai-organization', 'pinoxio'), ('openai-project', 'proj_3fEYNhsxfAVYI4FH47z9au6Q'), ('x-request-id', 'req_1960eb517401931d1334a9878cc78d96'), ('openai-processing-ms', '22222'), ('x-envoy-upstream-service-time', '22375'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=Ag1xc.1aG71eCcldDbPj8HG739qoYiTlt7FKo8Qml_Q-1758127490-1.0.1.1-qYwidGg9k8nXOoJhZOrJkzlwtDBMEmc8UTMIC7LILYxO5BFYs5Z64uqnohNXZ3fCLyZVp526LNbd6ItjNkOsh_nKRi_38FQIKf14ufNBm_I; path=/; expires=Wed, 17-Sep-25 17:14:50 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=WsNcRZmHYCfmU6llYrggne8a2sHPzwexTvVqyr01WAI-1758127490394-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '980a117ddc2e178d-MAA'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+DEBUG openai._base_client: request_id: req_1960eb517401931d1334a9878cc78d96
+WARNING app.main: Enhance: evaluation failed (name 'p' is not defined), using first available prompt
+
+ERROR app.main: Enhance: image generation failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Empty instances.', 'status': 'INVALID_ARGUMENT'}}
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!

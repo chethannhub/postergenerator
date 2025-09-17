@@ -2,6 +2,8 @@ import os, base64, json, re
 from google import genai
 from google.genai import types
 
+PROMPT_ENHANCER_MODEL = os.environ.get("PROMPT_ENHANCER_MODEL", "gemini-2.5-flash")
+
 CLIENT = genai.Client(api_key=os.environ.get("GEMINI_API_KEY_UNBILLED"))
 
 SYSTEM_PROMPT = """You are an expert prompt engineer specializing in generating highly detailed, specific prompts for creating professional posters using the google's Imagen 4 model. Your goal is to transform user concepts into comprehensive, clear,  production-ready descriptions that will produce visually compelling, creative and professional results specially for advertising, greeting, and other promotional materials.
@@ -74,65 +76,59 @@ A single, coherent prompt string ready for direct input into Imagen 4. No spelli
 """
 
 def enhance_prompt(user_prompt: str) -> str:
+    print("\nenhance_prompt called with:", user_prompt)
     contents = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]
     generate_config = types.GenerateContentConfig(response_mime_type="text/plain",  system_instruction=SYSTEM_PROMPT.format(user_prompt=user_prompt))
     response_text = ""
     for chunk in CLIENT.models.generate_content_stream(
-        model="gemini-2.5-pro", contents=contents, config=generate_config
+        model=PROMPT_ENHANCER_MODEL, contents=contents, config=generate_config
     ):
         if hasattr(chunk, 'text') and chunk.text:
             response_text += chunk.text
     return response_text
 
-def suggest_objects_and_colors(enhanced_prompt: str):
-    model = "gemini-2.0-flash-001"
-    generate_config = types.GenerateContentConfig(response_mime_type="text/plain")
-    # Objects prompt
-    objects_prompt = f"""
-Given the following enhanced poster prompt, suggest a list of 5-8 distinct visual objects, motifs, or elements that would be visually compelling and relevant for the poster. Return only a JSON array of short object names or phrases, nothing else.\n\nPrompt:\n{enhanced_prompt}
-"""
-    colors_prompt = f"""
-Given the following enhanced poster prompt, suggest 3-5 harmonious color combinations (each as a short descriptive phrase, e.g., 'emerald green and brushed gold', 'deep ocean blue and bright coral'). Return only a JSON array of color combination strings, nothing else.\n\nPrompt:\n{enhanced_prompt}
-"""
-    objects_contents = [types.Content(role="user", parts=[types.Part(text=objects_prompt)])]
-    colors_contents = [types.Content(role="user", parts=[types.Part(text=colors_prompt)])]
+def enhance_prompt_variants(user_prompt: str, n: int = 3) -> list[str]:
+    """Generate N diverse, production-ready enhanced prompts as a JSON array of strings.
 
-    # Stream for objects
-    objects_response = ""
+    Returns a list of strings. Falls back to best-effort parsing if JSON is malformed.
+    """
+    
+    print("\nenhance_prompt_variants called")
+    n = max(1, min(int(n or 3), 5))
+    instruction = (
+        SYSTEM_PROMPT
+        + "\n\nYou will now produce multiple alternative enhanced prompts. Important output rules:"  # noqa: E501
+        + f"\n- Output ONLY a valid JSON array with exactly {n} strings."
+        + "\n- Each string must be a complete, self-contained prompt ready for Imagen 4."
+        + "\n- Make the variants meaningfully different in style, composition, and visual approach, while staying faithful to the user's intent and all guardrails."
+        + "\n- Do not include any comments, markdown, backticks, or trailing text—JSON array only."
+        + "\n- Give in the formate [1......, 2......, 3......]"
+    )
+    contents = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]
+    generate_config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        system_instruction=instruction,
+    )
+    raw = ""
     for chunk in CLIENT.models.generate_content_stream(
-        model=model, contents=objects_contents, config=generate_config
+        model=PROMPT_ENHANCER_MODEL, contents=contents, config=generate_config
     ):
         if hasattr(chunk, 'text') and chunk.text:
-            objects_response += chunk.text
-    colors_response = ""
-    for chunk in CLIENT.models.generate_content_stream(
-        model=model, contents=colors_contents, config=generate_config
-    ):
-        if hasattr(chunk, 'text') and chunk.text:
-            colors_response += chunk.text
-    import json as _json
+            raw += chunk.text
+    # Best-effort JSON parsing
+    
+    print(f"\n\nRaw variants response: {raw}\n\n")
+        
     try:
-        objects = _json.loads(objects_response)
-        if not isinstance(objects, list):
-            objects = [str(objects)]
+        data = json.loads(raw)
+        if isinstance(data, list):
+            # Keep only strings
+            return [str(x).strip() for x in data if isinstance(x, (str, bytes))][:n]
     except Exception:
-        objects = []
+        pass
+    # Fallback: try to extract strings between quotes
     try:
-        color_combinations = _json.loads(colors_response)
-        if not isinstance(color_combinations, list):
-            color_combinations = [str(color_combinations)]
+        candidates = re.findall(r'"(.*?)"', raw, flags=re.DOTALL)
+        return [c.strip() for c in candidates][:n] if candidates else [enhance_prompt(user_prompt)]
     except Exception:
-        color_combinations = []
-    return objects, color_combinations
-
-def extract_key_features(enhanced_prompt: str):
-    features = {
-        'title': '', 'visual_style': '', 'color_scheme': '', 'typography': '',
-        'graphic_elements': '', 'background': '', 'audience': '', 'purpose': '', 'tone': '',
-    }
-    for key in features:
-        pattern = re.compile(rf"{key.replace('_', ' ').title()}:\s*(.*?)(?:\.|$)", re.IGNORECASE)
-        match = pattern.search(enhanced_prompt)
-        if match:
-            features[key] = match.group(1).strip()
-    return features
+        return [enhance_prompt(user_prompt)]

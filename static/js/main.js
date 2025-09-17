@@ -81,7 +81,7 @@ class PosterGenerator {
 
     async enhancePrompt(prompt, aspectRatio) {
         // Call backend to enhance prompt
-        const response = await fetch('/enhance-prompt', {
+        const response = await fetch('/re-enhance-prompt', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

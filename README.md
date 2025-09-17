@@ -6,6 +6,7 @@ A modular Flask application that leverages AI models (Gemini and Imagen) to enha
 
 ## **Features**
 - **AI-Powered Prompt Enhancement**: Enhance user-provided prompts using the Gemini model.
+- **Multiple Variants + Ranking**: Generate 3 enhanced prompt variants via Gemini and rank them with OpenAI to pick the best before generation.
 - **Poster Generation**: Generate high-quality poster images with the Imagen model.
 - **Logo Overlay**: Automatically discover and overlay logos on generated posters.
 - **Watermark Support**: Add watermarks to posters for branding.
@@ -42,7 +43,14 @@ app.py                 # Entry point for running the application
 Create a [`.env`](.env ) file in the project root to configure environment variables:
 ```env
 FLASK_SECRET_KEY=your_flask_secret_key
-GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY_UNBILLED=your_gemini_key_for_text
+GEMINI_API_KEY_BILLED=your_gemini_key_for_imagen
+OPENAI_API_KEY=your_openai_api_key   # Optional; if missing, a simple fallback ranking is used
+OPENAI_EVAL_MODEL=gpt-4o-mini        # Optional; default as shown
+IMAGE_GENERATOR=imagen               # imagen | gemini (selects image engine)
+IMAGEN_MODEL=models/imagen-4.0-generate-preview-06-06
+GEMINI_IMAGE_MODEL=models/gemini-2.5-flash-image-preview
+NUMBER_OF_IMAGES=2
 LOGO_DIR=KALA                # Directory for logo files (default: KALA)
 WATERMARK_LOGO=kala.png      # Path to the watermark image (optional)
 ```
@@ -86,8 +94,9 @@ The app will be available at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ## **Workflow**
 1. **Prompt Input**: The user provides an initial prompt and selects an aspect ratio.
-2. **Prompt Enhancement**: The Gemini model enhances the prompt and suggests objects and color schemes.
-3. **Poster Generation**: The Imagen model generates poster candidates based on the enhanced prompt.
+2. **Variants Generation**: Gemini produces 3 diverse enhanced prompts (JSON array).
+3. **Ranking**: OpenAI evaluates the three prompts (system+user rubric) and returns the best one.
+4. **Poster Generation**: The Imagen model generates poster candidates from the best prompt.
 4. **Logo Overlay**: Logos are automatically discovered from the `LOGO_DIR` and overlaid on the posters.
 5. **History Tracking**: Generated posters and metadata are saved to [`generation_history.json`](generation_history.json ) for future reference.
 

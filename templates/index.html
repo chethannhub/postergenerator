@@ -275,7 +275,7 @@ PosterGenerator.prototype.handleSubmit = async function(event) {
     regenerateBtn.onclick = function() {
         keyFeaturesSection.style.display = 'none';
         document.getElementById('loadingSection').style.display = 'block';
-        fetch('/enhance-prompt', {
+        fetch('/re-enhance-prompt', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt: lastPrompt })
