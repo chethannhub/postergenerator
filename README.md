@@ -53,6 +53,13 @@ GEMINI_IMAGE_MODEL=models/gemini-2.5-flash-image-preview
 NUMBER_OF_IMAGES=2
 LOGO_DIR=KALA                # Directory for logo files (default: KALA)
 WATERMARK_LOGO=kala.png      # Path to the watermark image (optional)
+
+# Evaluation/edit loop (optional)
+EVAL_ENABLED=true
+OPENAI_IMAGE_EVAL_MODEL=gpt-5  # Falls back to OPENAI_EVAL_MODEL if unavailable
+EVAL_TARGET_SCORE=9.5
+EVAL_MAX_ITERS=6
+EVAL_NO_IMPROVEMENT_STOP=true
 ```
 
 ---

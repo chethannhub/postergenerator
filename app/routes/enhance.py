@@ -2,9 +2,10 @@ from click import prompt
 from flask import Blueprint, request, redirect, url_for, flash, render_template, jsonify
 
 from app.routes.generate import displayPosters_with_default_logos
-from ..services.gemini import enhance_prompt, enhance_prompt_variants
+from app.services.openai_image_eval import evaluate_images
+from ..services.gemini import ENHANCE_SYSTEM_PROMPT, enhance_prompt, enhance_prompt_variants
 from ..services.openai_eval import evaluate_and_rank_prompts
-from ..services.imagen import generate_poster
+from ..services.imagen import edit_poster_gemini, generate_poster
 from PIL import Image
 import os, base64
 
@@ -54,7 +55,6 @@ def enhance():
             flash('Failed to enhance prompt. Please try again.')
             return redirect(url_for('base.landing'))
 
-        print(f"\nBest prompt: {best_prompt}\n")
     else:
         # Single enhance
         try:
@@ -64,7 +64,8 @@ def enhance():
             mainlog.error('Enhance: error generating enhanced prompt: %s\n', e)
             flash('Failed to enhance prompt. Please try again.')
             return redirect(url_for('base.landing'))
-
+        
+    print(f"\nBest prompt: {best_prompt}\n")
 
     if NO_SUGGESTIONS_PAGE:
         # Generate posters directly using the best prompt (skip intermediate suggestions page)
@@ -74,12 +75,80 @@ def enhance():
             mainlog.error('Enhance: image generation failed: %s\n', e)
             flash('Failed to generate posters. Please try again.')
             return redirect(url_for('base.landing'))
-
-        return displayPosters_with_default_logos(posters, prompt, aspect_ratio)
+    
+        # return displayPosters_with_default_logos(posters, prompt, aspect_ratio)
     else:
         # Redirect to suggestions page with best prompt
         mainlog.info('Enhance: done -> redirecting to suggestions page\n')
         return render_template('enhance.html', original_prompt=prompt, enhanced_prompt=best_prompt, variants=variants)
+    
+    EVAL_ENABLED = (os.environ.get("EVAL_ENABLED", "true").strip().lower() in ("1", "true", "yes", "on"))
+    TARGET = float(os.environ.get("EVAL_TARGET_SCORE", "9.5"))
+    MAX_ITERS = int(os.environ.get("EVAL_MAX_ITERS", "6"))
+    NO_IMPROVEMENT_STOP = (os.environ.get("EVAL_NO_IMPROVEMENT_STOP", "true").strip().lower() in ("1", "true", "yes", "on"))
+    
+    all_images = list(posters) 
+    eval_metadata = []
+    
+    try:
+        if EVAL_ENABLED and posters:
+            # First evaluation across initial posters
+            print("\nEvaluating initial posters...")
+            
+            image_evaluated_result = evaluate_images(posters, prompt, ENHANCE_SYSTEM_PROMPT)
+
+            print(f"\nInitial evaluation result: {image_evaluated_result['score']} \n {image_evaluated_result['edit_instructions']}\n")
+
+            eval_metadata.append({"iter": 0, **{k: v for k, v in image_evaluated_result.items() if k != "raw"}})
+            picked = posters[image_evaluated_result["picked_index"]]
+            best_score = image_evaluated_result.get("score", 0)
+            no_improve_count = 0
+
+            # Iterative edits on the picked image
+            for i in range(1, MAX_ITERS + 1):
+                print(f"\n\nEvaluating iteration {i}...")
+                if best_score >= TARGET:
+                    print("\nTarget score reached, stopping iterations. Best score: {}".format(best_score))
+                    break
+                edit_instr = image_evaluated_result.get("edit_instructions", "").strip()
+                if not edit_instr:
+                    print("\nNo edit instructions provided, stopping iterations.")
+                    break
+
+                # True edit-by-image via Gemini
+                edited = edit_poster_gemini(picked, edit_instr)
+                if not edited:
+                    print("\nEditing failed or returned no images, stopping iterations.")
+                    break
+
+                # For display: add all edited images
+                all_images.extend(edited)
+
+                # Evaluate the first edited image (or evaluate all and pick best)
+                image_evaluated_result = evaluate_images(edited, prompt, ENHANCE_SYSTEM_PROMPT)
+                eval_metadata.append({"iter": i, **{k: v for k, v in image_evaluated_result.items() if k != "raw"}})
+                picked = edited[image_evaluated_result["picked_index"]]
+                new_score = image_evaluated_result.get("score", 0)
+                
+                if new_score <= best_score:
+                    no_improve_count += 1
+                else:
+                    best_score = new_score
+                    no_improve_count = 0
+
+                if NO_IMPROVEMENT_STOP and no_improve_count >= 2:
+                    break
+                   
+    except Exception:
+        # If anything fails in eval loop, we gracefully fall back to initial posters
+        print("\nEvaluation failed, falling back to initial posters.\n")
+        pass
+    
+    
+    
+    print(f"\n\nTotal images to display: {len(all_images)}\n")
+    
+    return displayPosters_with_default_logos(all_images, prompt, aspect_ratio, eval_metadata=eval_metadata)
 
 @bp.route('/re-enhance-prompt', methods=['POST'])
 def enhance_prompt_api():

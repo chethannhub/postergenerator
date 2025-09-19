@@ -98,3 +98,54 @@ def generate_poster(prompt: str, aspect_ratio: str):
     if IMAGE_ENGINE == "gemini":
         return generate_poster_gemini(prompt, aspect_ratio)
     return generate_poster_imagen(prompt, aspect_ratio)
+
+
+def edit_poster_gemini(base_image: Image.Image, edit_instructions: str):
+    """True edit-by-image using Gemini image preview model with image+text input.
+
+    Returns a list of PIL Images (could be 1+ depending on model behavior).
+    """
+    
+    client = CLIENT_UNBILLED or CLIENT_BILLED
+    if client is None:
+        raise RuntimeError("Gemini image: No GEMINI_API_KEY configured for editing")
+
+    # Gemini expects image content via types.Part.from_bytes with mime_type
+    buf = BytesIO()
+    # Use PNG to preserve transparency if present
+    base_image.save(buf, format="PNG")
+    img_bytes = buf.getvalue()
+
+    contents = [
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_bytes(mime_type="image/png", data=img_bytes),
+                types.Part(text=edit_instructions),
+            ],
+        )
+    ]
+    result = client.models.generate_content(
+        model=GEMINI_IMAGE_MODEL,
+        contents=contents,
+        config=GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE]),
+    )
+
+    edited = []
+    for part in result.candidates[0].content.parts:
+        if getattr(part, "inline_data", None):
+            try:
+                edited.append(Image.open(BytesIO(part.inline_data.data)).convert("RGBA"))
+            except Exception:
+                continue
+    return edited
+
+
+def compose_refined_prompt(base_prompt: str, edit_instructions: str) -> str:
+    """Fallback refinement prompt composition (used if we ever need to re-generate).
+    We keep edit instructions concise and avoid text/logos/QR additions.
+    """
+    edit_block = (
+        "Refinement notes (do not add any text/logos/QR/UI): " + edit_instructions.strip()
+    )
+    return f"{base_prompt}\n\n{edit_block}"

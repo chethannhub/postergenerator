@@ -6,18 +6,17 @@ PROMPT_ENHANCER_MODEL = os.environ.get("PROMPT_ENHANCER_MODEL", "gemini-2.5-flas
 
 CLIENT = genai.Client(api_key=os.environ.get("GEMINI_API_KEY_UNBILLED"))
 
-SYSTEM_PROMPT = """You are an expert prompt engineer specializing in generating highly detailed, specific prompts for creating professional posters using the google's Imagen 4 model. Your goal is to transform user concepts into comprehensive, clear,  production-ready descriptions that will produce visually compelling, creative and professional results specially for advertising, greeting, and other promotional materials.
+ENHANCE_SYSTEM_PROMPT = """You are an expert prompt engineer specializing in generating highly detailed, specific prompts for creating professional posters using the google's Imagen 4 model. Your goal is to transform user concepts into comprehensive, clear,  production-ready descriptions that will produce visually compelling, creative and professional results specially for advertising, greeting, and other promotional materials.
 
 The poster should look as if it were designed by a highly skilled professional graphic designer, 
 exhibiting agency-grade craft with grid-based layout, consistent margins, clear focal hierarchy, balanced whitespace, precise alignment, and disciplined contrast. 
 
-Keep scenes logical and physically plausible for the intended audience.
-(e.g., 1. a "cat flying a kite" is not logical, but "a cat playing with a ball of yarn" is
-        2. a "oil lamp on the car" is not logical, but "a oil lamp on the table" is
-        3. a "crackers firing under the car" is not logical, but "a crackers firing away from the car" is).
+Keep scenes logical, realistic setup and physically plausible for the intended audience.
 
-When crafting the description, think through the checklist below, 
-but OUTPUT ONLY a single coherent prompt string ready for Imagen (one paragraph, no lists). 
+For any people, character or animal ensure authentic, natural poses and micro-expressions to increase perceived warmth and trust; avoid uncanny or exaggerated poses.
+
+When crafting the description, think through the checklist below,
+but OUTPUT ONLY a single coherent prompt string ready for Imagen (one paragraph, no lists).
 Do not include section labels or numbering in the output.
 
 1. USER INTENT: Clearly understand the user intent, Capture the core objective and success state.
@@ -57,7 +56,6 @@ Do not include section labels or numbering in the output.
 - use 4k/HDR/photostudio/photorealistic only when photographic style is intended.
 
 9. SAFE AREA & TEXT SUPPRESSION: 
-- Reserve a clean blank safe area for future branding/copy; 
 - do not render any text, letters, numbers, typographic glyphs, signatures, captions, UI, QR codes, brand or company names, or logos in the image.
 
 10. NEGATIVE PROMPT (append as a concise noun list): letters, text, words, numbers, typography, captions, subtitles, logos, brand names, company names, watermarks, stamps, signatures, UI overlays, QR codes, banners, signs.
@@ -78,7 +76,7 @@ A single, coherent prompt string ready for direct input into Imagen 4. No spelli
 def enhance_prompt(user_prompt: str) -> str:
     print("\nenhance_prompt called with:", user_prompt)
     contents = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]
-    generate_config = types.GenerateContentConfig(response_mime_type="text/plain",  system_instruction=SYSTEM_PROMPT.format(user_prompt=user_prompt))
+    generate_config = types.GenerateContentConfig(response_mime_type="text/plain",  system_instruction=ENHANCE_SYSTEM_PROMPT.format(user_prompt=user_prompt))
     response_text = ""
     for chunk in CLIENT.models.generate_content_stream(
         model=PROMPT_ENHANCER_MODEL, contents=contents, config=generate_config
@@ -96,7 +94,7 @@ def enhance_prompt_variants(user_prompt: str, n: int = 3) -> list[str]:
     print("\nenhance_prompt_variants called")
     n = max(1, min(int(n or 3), 5))
     instruction = (
-        SYSTEM_PROMPT
+        ENHANCE_SYSTEM_PROMPT
         + "\n\nYou will now produce multiple alternative enhanced prompts. Important output rules:"  # noqa: E501
         + f"\n- Output ONLY a valid JSON array with exactly {n} strings."
         + "\n- Each string must be a complete, self-contained prompt ready for Imagen 4."
