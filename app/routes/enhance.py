@@ -6,26 +6,29 @@ from app.services.openai_image_eval import evaluate_images
 from ..services.gemini import ENHANCE_SYSTEM_PROMPT, enhance_prompt, enhance_prompt_variants
 from ..services.openai_eval import evaluate_and_rank_prompts
 from ..services.imagen import edit_poster_gemini, generate_poster
+from app.services.test_layer import add_text_to_poster
+
 from PIL import Image
+
 import os, base64
 
 bp = Blueprint('enhance', __name__)
 
 GENERATE_PROMPT_VARIANTS = os.environ.get("GENERATE_PROMPT_VARIANTS", "true").strip().lower() in ("1", "true", "yes", "on")
 NO_SUGGESTIONS_PAGE = os.environ.get("NO_SUGGESTIONS_PAGE", "false").strip().lower() in ("1", "true", "yes", "on")
-
+ADD_TEXT_TO_POSTER = (os.environ.get("ADD_TEXT_TO_POSTER", "true").strip().lower() in ("1", "true", "yes", "on"))
 
 @bp.route('/enhance', methods=['POST'])
 def enhance():
     print("\n/enhance api called")
     
-    prompt = request.form.get('prompt', '').strip()
+    user_prompt = request.form.get('prompt', '').strip()
     aspect_ratio = request.form.get('aspect_ratio', '9:16')
     
     mainlog = __import__('logging').getLogger('app.main')
     mainlog.info('Enhance: start (aspect=%s)\n', aspect_ratio)
     
-    if not prompt:
+    if not user_prompt:
         flash('Prompt is required.')
         return redirect(url_for('base.landing'))
 
@@ -36,7 +39,7 @@ def enhance():
     if GENERATE_PROMPT_VARIANTS:
         # Generate multiple variants and rank
         try:
-            variants = enhance_prompt_variants(prompt, n=3)
+            variants = enhance_prompt_variants(user_prompt, n=3)
             mainlog.info('Enhance: generated %d variants\n', len(variants))
         except Exception as e:
             mainlog.error('Enhance: error generating variants: %s\n', e)            
@@ -45,7 +48,7 @@ def enhance():
             
         # Rank via OpenAI Eval
         try:
-            eval_result = evaluate_and_rank_prompts(prompt, variants)
+            eval_result = evaluate_and_rank_prompts(user_prompt, variants)
             best_prompt = eval_result.get('best')
             if not best_prompt:
                 raise RuntimeError("Evaluation did not return a best prompt")
@@ -58,7 +61,7 @@ def enhance():
     else:
         # Single enhance
         try:
-            best_prompt = enhance_prompt(prompt)
+            best_prompt = enhance_prompt(user_prompt)
             mainlog.info('Enhance: single enhanced prompt generated\n')
         except Exception as e:
             mainlog.error('Enhance: error generating enhanced prompt: %s\n', e)
@@ -80,7 +83,7 @@ def enhance():
     else:
         # Redirect to suggestions page with best prompt
         mainlog.info('Enhance: done -> redirecting to suggestions page\n')
-        return render_template('enhance.html', original_prompt=prompt, enhanced_prompt=best_prompt, variants=variants)
+        return render_template('enhance.html', original_prompt=user_prompt, enhanced_prompt=best_prompt, variants=variants)
     
     EVAL_ENABLED = (os.environ.get("EVAL_ENABLED", "true").strip().lower() in ("1", "true", "yes", "on"))
     TARGET = float(os.environ.get("EVAL_TARGET_SCORE", "9.5"))
@@ -95,13 +98,13 @@ def enhance():
             # First evaluation across initial posters
             print("\nEvaluating initial posters...")
             
-            image_evaluated_result = evaluate_images(posters, prompt, ENHANCE_SYSTEM_PROMPT)
+            image_evaluated_result = evaluate_images(posters, user_prompt, ENHANCE_SYSTEM_PROMPT)
 
             print(f"\nInitial evaluation result: {image_evaluated_result['score']} \n {image_evaluated_result['edit_instructions']}\n")
 
             eval_metadata.append({"iter": 0, **{k: v for k, v in image_evaluated_result.items() if k != "raw"}})
             picked = posters[image_evaluated_result["picked_index"]]
-            best_score = image_evaluated_result.get("score", 0)
+            best_score = image_evaluated_result["score"]
             no_improve_count = 0
 
             # Iterative edits on the picked image
@@ -110,7 +113,7 @@ def enhance():
                 if best_score >= TARGET:
                     print("\nTarget score reached, stopping iterations. Best score: {}".format(best_score))
                     break
-                edit_instr = image_evaluated_result.get("edit_instructions", "").strip()
+                edit_instr = image_evaluated_result['edit_instructions'].strip()
                 if not edit_instr:
                     print("\nNo edit instructions provided, stopping iterations.")
                     break
@@ -125,7 +128,7 @@ def enhance():
                 all_images.extend(edited)
 
                 # Evaluate the first edited image (or evaluate all and pick best)
-                image_evaluated_result = evaluate_images(edited, prompt, ENHANCE_SYSTEM_PROMPT)
+                image_evaluated_result = evaluate_images(edited, user_prompt, ENHANCE_SYSTEM_PROMPT)
                 eval_metadata.append({"iter": i, **{k: v for k, v in image_evaluated_result.items() if k != "raw"}})
                 picked = edited[image_evaluated_result["picked_index"]]
                 new_score = image_evaluated_result.get("score", 0)
@@ -148,7 +151,22 @@ def enhance():
     
     print(f"\n\nTotal images to display: {len(all_images)}\n")
     
-    return displayPosters_with_default_logos(all_images, prompt, aspect_ratio, eval_metadata=eval_metadata)
+    try:
+        if ADD_TEXT_TO_POSTER:
+            final_image_in_list = all_images[-1] if all_images else None  # last image in the list
+            
+            image_with_text = add_text_to_poster(final_image_in_list, user_prompt)
+
+            print("\nGot the poster with text.\n")
+
+            all_images.append(image_with_text)
+        else:
+            print("\nSkipping adding text to poster as per configuration.\n")
+    except Exception as e:
+        print(f"\nFailed to add text to poster: {e}\n")
+        pass
+
+    return displayPosters_with_default_logos(all_images, user_prompt, aspect_ratio, eval_metadata=eval_metadata)
 
 @bp.route('/re-enhance-prompt', methods=['POST'])
 def enhance_prompt_api():

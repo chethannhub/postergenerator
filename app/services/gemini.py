@@ -13,7 +13,8 @@ exhibiting agency-grade craft with grid-based layout, consistent margins, clear 
 
 Keep scenes logical, realistic setup and physically plausible for the intended audience.
 
-For any people, character or animal ensure authentic, natural poses and micro-expressions to increase perceived warmth and trust; avoid uncanny or exaggerated poses.
+For people, character or animal ensure authentic, natural poses and micro-expressions to increase perceived warmth and trust; avoid uncanny or exaggerated poses.
+and also be realistic facial expressions and clear eye with feelings.
 
 When crafting the description, think through the checklist below,
 but OUTPUT ONLY a single coherent prompt string ready for Imagen (one paragraph, no lists).

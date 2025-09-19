@@ -65,6 +65,9 @@ def _parse_eval_json(text: str, image_count: int) -> Dict[str, Any]:
     score = float(data.get("score", 0))
     rationale = str(data.get("rationale", ""))
     edit_instructions = str(data.get("edit_instructions", ""))
+    
+    print(f"\nParsed eval JSON: picked_index={picked}, score={score}, rationale={rationale}, edit_instructions={edit_instructions}\n")
+    
     return {
         "picked_index": picked,
         "score": score,
