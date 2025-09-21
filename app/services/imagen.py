@@ -5,6 +5,9 @@ from google.genai import types
 from google.genai.types import GenerateContentConfig, Modality
 from PIL import Image
 from google import genai
+from pathlib import Path
+
+MEDIA_DIR = Path(__file__).parent / "media"
 
 # Configure separate clients so we can pick billed/unbilled per engine
 _BILLED_KEY = os.environ.get("GEMINI_API_KEY_BILLED")
@@ -19,11 +22,12 @@ IMAGE_ENGINE = (os.environ.get("IMAGE_GENERATOR", "imagen") or "imagen").strip()
 IMAGEN_MODEL = os.environ.get("IMAGEN_MODEL", "models/imagen-4.0-generate-preview-06-06")
 GEMINI_IMAGE_MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "models/gemini-2.5-flash-image-preview")
 
+USE_USER_ASSET_IMAGE_GEN = (os.environ.get("USE_USER_ASSET_IMAGE_GEN", "true").strip().lower() in ("1", "true", "yes", "on"))
+
 try:
     NUMBER_OF_IMAGES = int(os.environ.get("NUMBER_OF_IMAGES", "2"))
 except Exception:
     NUMBER_OF_IMAGES = 2
-
 
 def _build_config_common(aspect_ratio: str):
     return dict(
@@ -32,8 +36,7 @@ def _build_config_common(aspect_ratio: str):
         aspect_ratio=aspect_ratio,
     )
 
-
-def generate_poster_imagen(prompt: str, aspect_ratio: str):
+def generate_poster_imagen(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str]):
     print("\ngenerate_poster_imagen called")
     
     """Generate images using Imagen model with Imagen-specific options."""
@@ -47,6 +50,7 @@ def generate_poster_imagen(prompt: str, aspect_ratio: str):
     if client is None:
         raise RuntimeError("Imagen: No GEMINI_API_KEY_BILLED or GEMINI_API_KEY_UNBILLED configured")   
 
+
     result = client.models.generate_images(
         model=IMAGEN_MODEL,
         prompt=prompt,
@@ -58,7 +62,7 @@ def generate_poster_imagen(prompt: str, aspect_ratio: str):
     return images
 
 
-def generate_poster_gemini(prompt: str, aspect_ratio: str):
+def generate_poster_gemini(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str]) -> list[Image.Image]:
     print("\ngenerate_poster_gemini called")
     
     """Generate images using Gemini image model with its compatible options."""
@@ -69,13 +73,32 @@ def generate_poster_gemini(prompt: str, aspect_ratio: str):
     if client is None:
         raise RuntimeError("Gemini image: No GEMINI_API_KEY_UNBILLED or GEMINI_API_KEY_BILLED configured")
     
-    # try:
-    result = client.models.generate_content(
-        model=GEMINI_IMAGE_MODEL,
-        contents=[types.Content(role="user", parts=[types.Part(text=prompt)])],
-        config=GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE],)
-    )
+    added_prompt = f"{prompt}\n\nAspect ratio: {aspect_ratio}"
     
+    
+    if USE_USER_ASSET_IMAGE_GEN and (saved_logos or saved_products):
+
+        # Each of these is a path string, not a list
+        uploaded_logos = [client.files.upload(file=MEDIA_DIR / p) for p in saved_logos]
+        uploaded_products = [client.files.upload(file=MEDIA_DIR / p) for p in saved_products]
+        # Each element in uploaded_* is a File object you can include in contents
+
+        logo_name = uploaded_logos[0].name if uploaded_logos else None
+        print(logo_name)  # "files/*"
+        
+        # try:
+        result = client.models.generate_content(
+            model=GEMINI_IMAGE_MODEL,
+            contents=[types.Content(role="user", parts=[types.Part(text=added_prompt)]), *uploaded_logos, *uploaded_products],
+            config=GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE],)
+        )
+    else:
+        result = client.models.generate_content(
+            model=GEMINI_IMAGE_MODEL,
+            contents=[types.Content(role="user", parts=[types.Part(text=added_prompt)])],
+            config=GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE],)
+        )
+        
     # except Exception as e:
         # _log.warning(
         #     'Gemini image model "%s" not available for generate_images; falling back to Imagen. Error: %s',
@@ -92,12 +115,12 @@ def generate_poster_gemini(prompt: str, aspect_ratio: str):
     return images
 
 
-def generate_poster(prompt: str, aspect_ratio: str):
+def generate_poster(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str]) -> list[Image.Image]:
     print("\ngenerate_poster called")
     
     if IMAGE_ENGINE == "gemini":
-        return generate_poster_gemini(prompt, aspect_ratio)
-    return generate_poster_imagen(prompt, aspect_ratio)
+        return generate_poster_gemini(prompt, aspect_ratio, saved_logos, saved_products)
+    return generate_poster_imagen(prompt, aspect_ratio, saved_logos, saved_products)
 
 
 def edit_poster_gemini(base_image: Image.Image, edit_instructions: str):

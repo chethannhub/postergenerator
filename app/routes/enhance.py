@@ -7,6 +7,8 @@ from ..services.gemini import ENHANCE_SYSTEM_PROMPT, enhance_prompt, enhance_pro
 from ..services.openai_eval import evaluate_and_rank_prompts
 from ..services.imagen import edit_poster_gemini, generate_poster
 from app.services.test_layer import add_text_to_poster
+from app.utils.assets import save_uploaded_files, extract_assets_features, build_assets_prompt_snippet, serialize_paths
+from app.utils.assets import overlay_assets_on_image
 
 from PIL import Image
 
@@ -32,6 +34,19 @@ def enhance():
         flash('Prompt is required.')
         return redirect(url_for('base.landing'))
 
+    # Handle uploaded assets
+    logo_files = request.files.getlist('logos') if 'logos' in request.files else []
+    product_files = request.files.getlist('products') if 'products' in request.files else []
+    
+    saved_logos = save_uploaded_files(logo_files, 'logos') if logo_files else []
+    saved_products = save_uploaded_files(product_files, 'products') if product_files else []
+
+    # asset_features = extract_assets_features(saved_logos, saved_products)
+    # print("\nAsset features extracted: ", asset_features, "\n")
+    
+    # assets_snippet = build_assets_prompt_snippet(asset_features) if (saved_logos or saved_products) else ''
+    # print("\nAssets snippet: ", assets_snippet, "\n")
+
     # flow: generate N variants in one LLM call, rank via OpenAI, then generate images with the best
     best_prompt = None
     variants = []
@@ -39,7 +54,8 @@ def enhance():
     if GENERATE_PROMPT_VARIANTS:
         # Generate multiple variants and rank
         try:
-            variants = enhance_prompt_variants(user_prompt, n=3)
+            enhancer_input = user_prompt
+            variants = enhance_prompt_variants(enhancer_input, saved_logos, saved_products, n=3)
             mainlog.info('Enhance: generated %d variants\n', len(variants))
         except Exception as e:
             mainlog.error('Enhance: error generating variants: %s\n', e)            
@@ -61,7 +77,7 @@ def enhance():
     else:
         # Single enhance
         try:
-            best_prompt = enhance_prompt(user_prompt)
+            best_prompt = enhance_prompt(user_prompt, saved_logos, saved_products)
             mainlog.info('Enhance: single enhanced prompt generated\n')
         except Exception as e:
             mainlog.error('Enhance: error generating enhanced prompt: %s\n', e)
@@ -73,7 +89,7 @@ def enhance():
     if NO_SUGGESTIONS_PAGE:
         # Generate posters directly using the best prompt (skip intermediate suggestions page)
         try:
-            posters = generate_poster(best_prompt, aspect_ratio)
+            posters = generate_poster(best_prompt, aspect_ratio, saved_logos, saved_products)
         except Exception as e:
             mainlog.error('Enhance: image generation failed: %s\n', e)
             flash('Failed to generate posters. Please try again.')
@@ -83,7 +99,16 @@ def enhance():
     else:
         # Redirect to suggestions page with best prompt
         mainlog.info('Enhance: done -> redirecting to suggestions page\n')
-        return render_template('enhance.html', original_prompt=user_prompt, enhanced_prompt=best_prompt, variants=variants)
+        from app.utils.assets import serialize_paths
+        return render_template(
+            'enhance.html',
+            original_prompt=user_prompt,
+            enhanced_prompt=best_prompt,
+            variants=variants,
+            aspect_ratio=aspect_ratio,
+            logos_paths_json=serialize_paths(saved_logos),
+            products_paths_json=serialize_paths(saved_products),
+        )
     
     EVAL_ENABLED = (os.environ.get("EVAL_ENABLED", "true").strip().lower() in ("1", "true", "yes", "on"))
     TARGET = float(os.environ.get("EVAL_TARGET_SCORE", "9.5"))
@@ -98,7 +123,7 @@ def enhance():
             # First evaluation across initial posters
             print("\nEvaluating initial posters...")
             
-            image_evaluated_result = evaluate_images(posters, user_prompt, ENHANCE_SYSTEM_PROMPT)
+            image_evaluated_result = evaluate_images(posters, user_prompt, best_prompt)
 
             print(f"\nInitial evaluation result: {image_evaluated_result['score']} \n {image_evaluated_result['edit_instructions']}\n")
 
@@ -166,7 +191,21 @@ def enhance():
         print(f"\nFailed to add text to poster: {e}\n")
         pass
 
-    return displayPosters_with_default_logos(all_images, user_prompt, aspect_ratio, eval_metadata=eval_metadata)
+    # # If assets were uploaded, overlay them on the final text-added image (if present)
+    # try:
+    #     if (saved_logos or saved_products) and all_images:
+    #         base = all_images[-1]
+    #         composed = overlay_assets_on_image(base, saved_products, saved_logos)
+    #         all_images.append(composed)
+    # except Exception:
+    #     pass
+
+    return displayPosters_with_default_logos(
+        all_images,
+        user_prompt,
+        aspect_ratio,
+        eval_metadata=eval_metadata,
+    )
 
 @bp.route('/re-enhance-prompt', methods=['POST'])
 def enhance_prompt_api():

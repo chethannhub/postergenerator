@@ -2094,3 +2094,566 @@ INFO app.main: Drawing text: Successfully completed drawing 2 text elements
 INFO app.main: Text Layer: Successfully completed text addition process
 INFO app.main: Generate: done (2 posters)
 
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja c"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI
+INFO app.main: Text Analysis: Successfully parsed 4 text elements
+INFO app.main: Text Layer: OpenAI suggested 4 text elements. Rationale: Text is centered to maintain visual balance and readability against the blue background. The hierarchy emphasizes the discount offer with a larger, bold font, while other messages are smaller and supp
+INFO app.main: Drawing text: Image dimensions 1024x1024
+INFO app.main: Drawing text: Successfully drew element 1: "I am a Navdor, a wedding wear ..."
+INFO app.main: Drawing text: Successfully drew element 2: "Showcasing our new Maharaja co..."
+INFO app.main: Drawing text: Successfully drew element 3: "30% OFF on all couple pairs un..."
+INFO app.main: Drawing text: Successfully drew element 4: "Happy Dassara to all our custo..."
+INFO app.main: Drawing text: Successfully completed drawing 4 text elements
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja c"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI
+INFO app.main: Text Analysis: Successfully parsed 4 text elements
+INFO app.main: Text Layer: OpenAI suggested 4 text elements. Rationale: The text is positioned centrally to maintain balance and focus on the collection. The use of contrasting colors ensures readability against the background. The hierarchy is established with bold text 
+INFO app.main: Drawing text: Image dimensions 1248x832
+INFO app.main: Drawing text: Successfully drew element 1: "I am a Navdor, a wedding wear ..."
+INFO app.main: Drawing text: Successfully drew element 2: "Showcasing our new Maharaja co..."
+INFO app.main: Drawing text: Successfully drew element 3: "30% off on all couple pairs un..."
+INFO app.main: Drawing text: Successfully drew element 4: "Happy Dassara to all our custo..."
+INFO app.main: Drawing text: Successfully completed drawing 4 text elements
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI
+INFO app.main: Text Analysis: Successfully parsed 2 text elements
+INFO app.main: Text Layer: OpenAI suggested 2 text elements. Rationale: The main greeting 'Happy Diwali!' is placed at the top center to capture attention immediately, using a bright gold color for contrast against the night sky. 'Celebrate with Joy' is positioned at the 
+INFO app.main: Drawing text (cairo): drew element 1 "Happy Diwali!"
+INFO app.main: Drawing text (cairo): drew element 2 "Celebrate with Joy"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja c"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI
+INFO app.main: Text Analysis: Successfully parsed 2 text elements
+INFO app.main: Text Layer: OpenAI suggested 2 text elements. Rationale: The main offer '30% OFF on Couple Pairs' is positioned centrally at the bottom to attract attention, using a gold color to stand out against the dark background. 'Happy Dassara!' is placed just below 
+INFO app.main: Drawing text (cairo): drew element 1 "30% OFF on Couple Pairs"
+INFO app.main: Drawing text (cairo): drew element 2 "Happy Dassara!"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja c"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI
+INFO app.main: Text Analysis: Successfully parsed 2 text elements
+INFO app.main: Text Layer: OpenAI suggested 2 text elements. Rationale: The '30% OFF on Couple Pairs' text is placed centrally to attract attention, using a gold color for contrast against the dark background. 'Happy Dassara!' is positioned at the top for visibility, crea
+INFO app.main: Drawing text (cairo): drew element 1 "30% OFF on Couple Pairs"
+INFO app.main: Drawing text (cairo): drew element 2 "Happy Dassara!"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO app.main: Enhance: done -> redirecting to suggestions page
+
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja c"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI
+INFO app.main: Text Analysis: Successfully parsed 3 text elements
+INFO app.main: Text Layer: OpenAI suggested 3 text elements. Rationale: The text 'New Maharaja Collection' is placed at the top for visibility and to attract attention. '30% Off on Couple Pairs' is positioned centrally to highlight the offer. 'Happy Dassara!' is placed at
+INFO app.main: Drawing text (cairo): drew element 1 "New Maharaja Collection"
+INFO app.main: Drawing text (cairo): drew element 2 "30% Off on Couple Pairs"
+INFO app.main: Drawing text (cairo): drew element 3 "Happy Dassara!"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (5 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "Make happy dasara poster
+
+for a fashion designing boutique, Gatrika by Yashoda"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI.
+INFO app.main: Text Analysis: Successfully parsed text elements: [{'text': 'Make Happy Dasara', 'position': {'x': 0.5, 'y': 0.1, 'width': 0.8, 'height': 0.1}, 'font_size': 0.05, 'font_name': 'Arial', 'color': '#FFFFFF', 'alignment': 'center', 'font_weight': 'bold'}, {'text': 'Gatrika by Yashoda', 'position': {'x': 0.5, 'y': 0.9, 'width': 0.6, 'height': 0.05}, 'font_size': 0.03, 'font_name': 'Arial', 'color': '#FFFFFF', 'alignment': 'center', 'font_weight': 'normal'}]
+INFO app.main: Drawing text (cairo): drew element 1 "Make Happy Dasara"
+INFO app.main: Drawing text (cairo): drew element 2 "Gatrika by Yashoda"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (5 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "Make happy dasara poster for a fashion designing boutique, Gatrika by Yashoda"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI.
+INFO app.main: Text Analysis: Successfully parsed text elements: [{'text': 'Happy Dasara!', 'position': {'x': 0.5, 'y': 0.2, 'width': 0.6, 'height': 0.1}, 'font_size': 0.05, 'font_name': 'Arial', 'color': '#FFFFFF', 'alignment': 'center', 'font_weight': 'bold'}, {'text': 'Gatrika by Yashoda', 'position': {'x': 0.5, 'y': 0.8, 'width': 0.6, 'height': 0.1}, 'font_size': 0.04, 'font_name': 'Arial', 'color': '#FFFFFF', 'alignment': 'center', 'font_weight': 'normal'}]
+INFO app.main: Drawing text (cairo): drew element 1 "Happy Dasara!"
+INFO app.main: Drawing text (cairo): drew element 2 "Gatrika by Yashoda"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "poster for wishing Happy dasara"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI.
+INFO app.main: Text Analysis: Successfully parsed text elements: [{'text': 'Happy Dasara', 'position': {'x': 0.5, 'y': 0.1, 'width': 0.8, 'height': 0.1}, 'font_size': 0.1, 'font_name': 'Arial', 'color': '#FFFFFF', 'alignment': 'center', 'font_weight': 'bold'}]
+INFO app.main: Drawing text (cairo): drew element 1 "Happy Dasara"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "poster for wishing happy Christmas"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI.
+INFO app.main: Text Analysis: Successfully parsed text elements: [{'text': 'Merry Christmas', 'position': {'x': 0.5, 'y': 0.2, 'width': 0.8, 'height': 0.1}, 'font_size': 0.05, 'font_name': 'Arial', 'color': '#FFFFFF', 'alignment': 'center', 'font_weight': 'bold'}]
+INFO app.main: Drawing text (cairo): drew element 1 "Merry Christmas"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (3 posters)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+ERROR app.main: Enhance: image generation failed: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Text Layer: Starting text addition process for prompt: "poster for wishing diwali"
+INFO app.main: Text Analysis: Calling OpenAI Vision API for text placement analysis
+INFO app.main: Text Analysis: Received response from OpenAI.
+INFO app.main: Text Analysis: Successfully parsed text elements: [{'text': 'Happy Diwali', 'position': {'x': 0.5, 'y': 0.1, 'width': 0.8, 'height': 0.1}, 'font_size': 0.05, 'font_name': 'Arial', 'color': '#FFD700', 'alignment': 'center', 'font_weight': 'bold'}]
+INFO app.main: Drawing text (cairo): drew element 1 "Happy Diwali"
+INFO app.main: Text Layer: Successfully completed text addition process
+INFO app.main: Generate: done (3 posters)
+

@@ -5,6 +5,23 @@ from openai import OpenAI
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+def _parse_eval_json(text: str, image_count: int) -> Dict[str, Any]:
+    print("\n_parse_eval_json called")
+    data = json.loads(text)
+    picked = int(data.get("picked_index", 0))
+    score = float(data.get("score", 0))
+    rationale = str(data.get("rationale", ""))
+    edit_instructions = str(data.get("edit_instructions", ""))
+    
+    print(f"\nParsed eval JSON: picked_index={picked}, score={score}, rationale={rationale}, edit_instructions={edit_instructions}\n")
+    
+    return {
+        "picked_index": picked,
+        "score": score,
+        "rationale": rationale,
+        "edit_instructions": edit_instructions,
+        "raw": data,
+    }
 
 def _to_data_url(img: Image.Image, fmt: str = "PNG") -> str:
     from io import BytesIO
@@ -19,6 +36,26 @@ OPENAI_FALLBACK_MODEL = os.getenv("OPENAI_IMAGE_EVAL_FALLBACK_MODEL", "gpt-4o-mi
 
 EVAL_IMAGE_SYSTEM_PROMPT = (
     """You are a senior visual evaluator. Analyze poster images for alignment with the user's intent and the provided design system guidance. 
+            
+        Evaluation criteria:
+        1. Text: No text, letters, words, numbers, typography, captions, subtitles, stamps, signatures, UI overlays, QR codes, banners, or signs in the image.
+        2. Brand integration (skip if brand_assets_present = false): integrate provided brand assets subtly with correct proportion, placement, and lighting; do not fabricate or alter logos/products; blend with background cleanly. 
+        3. Background design: Complete background with no cut-off objects or floating elements; contextually relevant but not distracting; subtle depth cues (lighting, focus, scale, overlap) to separate subject from background.
+        4. People and characters: Proper poses, natural expressions, and interactions that suit the poster's purpose and audience.
+            - Especially eyes in accurate and precise position and design.
+        5. Scene logic & plausibility: physically coherent setup, materials, and lighting consistent with the stated poster type and audience.
+        6. Micro-details: high fidelity details, realistic textures, and natural imperfections (e.g., skin pores, fabric weave, surface reflections); avoid blurriness, smudges, or oversimplification.
+        7. Themes & moods: Accurately reflect the intended themes and moods (e.g., festive, professional, casual, elegant) through composition, color palette, lighting, and subject matter.
+        8. If any festival themes are mentioned, include relevant cultural symbols, characters, colors, and motifs.
+
+        Output requirements:
+        Return ONLY a single JSON object with:
+        - picked_index (0-based; 0 if only one image)
+        - score (0.0..10.0; one decimal)
+        - rationale (1-2 concise sentences)
+        - edit_instructions (specific, actionable visual changes to fix issues without adding any text/logos/QR/UI ) for gemini-2.5-flash-image-preview
+    
+    
     Return ONLY strict JSON with keys: {
         "type": "json_schema",
         "json_schema": {
@@ -46,37 +83,11 @@ def _build_user_instruction(user_prompt: str, enhance_system_prompt: str, multi:
     prefix = ("Evaluate the image set below" if multi else "Evaluate the single image below") + ", considering BOTH the user's goal and the design system guidance.\n\n"
     details = (
         f"User prompt (goal):\n{user_prompt}\n\n"
-        f"Design system prompt (for enhancement):\n{enhance_system_prompt}\n\n"
-        "Return a single JSON object with:\n"
-        "- picked_index (0-based; 0 if only one image)\n"
-        "- score (0.0..10.0)\n"
-        "- rationale (1-2 concise sentences)\n"
-        "- edit_instructions (clear, actionable guidance to improve the image without adding any text/logos/QR/UI)\n"
-        "No extra commentary. JSON only."
+        f"enhanced prompt:\n{enhance_system_prompt}\n\n"
     )
     return prefix + details
 
-
-
-def _parse_eval_json(text: str, image_count: int) -> Dict[str, Any]:
-    print("\n_parse_eval_json called")
-    data = json.loads(text)
-    picked = int(data.get("picked_index", 0))
-    score = float(data.get("score", 0))
-    rationale = str(data.get("rationale", ""))
-    edit_instructions = str(data.get("edit_instructions", ""))
-    
-    print(f"\nParsed eval JSON: picked_index={picked}, score={score}, rationale={rationale}, edit_instructions={edit_instructions}\n")
-    
-    return {
-        "picked_index": picked,
-        "score": score,
-        "rationale": rationale,
-        "edit_instructions": edit_instructions,
-        "raw": data,
-    }
-
-def evaluate_images(images: List[Image.Image], user_prompt: str, enhance_system_prompt: str) -> Dict[str, Any]:
+def evaluate_images(images: List[Image.Image], user_prompt: str, enhanced_user_prompt: str) -> Dict[str, Any]:
     """Evaluate one or more images and pick the best."""
     
     print("\nevaluate_images called with {} images".format(len(images)))
@@ -84,11 +95,10 @@ def evaluate_images(images: List[Image.Image], user_prompt: str, enhance_system_
     if not images:
         raise ValueError("No images provided for evaluation")
 
-
     try:
         print(f"\n_call_openai called with model: {OPENAI_IMAGE_EVAL_MODEL}")
         
-        user_instruction = _build_user_instruction(user_prompt, enhance_system_prompt, multi=len(images) > 1)
+        user_instruction = _build_user_instruction(user_prompt, enhanced_user_prompt, multi=len(images) > 1)
 
         response = client.responses.create(
         model=OPENAI_IMAGE_EVAL_MODEL,

@@ -7,6 +7,7 @@ from ..services.imagen import generate_poster, edit_poster_gemini
 from ..services.openai_image_eval import evaluate_images, evaluate_single_image
 from ..services.gemini import ENHANCE_SYSTEM_PROMPT as ENHANCE_SYSTEM_PROMPT
 from ..utils.logos import overlay_logo, get_logo_xy, LOGO_DIR, DISABLE_LOGO_OVERLAY
+from ..utils.assets import deserialize_paths, extract_assets_features, build_assets_prompt_snippet, overlay_assets_on_image
 from ..persistence.history import generation_history, save_history
 
 bp = Blueprint('generate', __name__)
@@ -18,12 +19,21 @@ def generate():
     enhanced_prompt = request.form.get('enhanced_prompt', '').strip()
     prompt = request.form.get('prompt', '').strip()
     aspect_ratio = request.form.get('aspect_ratio', '9:16')
+    logos_paths = deserialize_paths(request.form.get('logos_paths', '') or request.form.get('logos_paths[]', ''))
+    product_paths = deserialize_paths(request.form.get('product_paths', '') or request.form.get('product_paths[]', ''))
     __import__('logging').getLogger('app.main').info('Generate: start (aspect=%s)\n', aspect_ratio)
     
     if not enhanced_prompt:
         flash('Enhanced prompt is required.')
         return render_template('enhance.html', original_prompt=prompt)
     
+    # If assets provided, gently guide the generator with composition hints
+    if logos_paths or product_paths:
+        feats = extract_assets_features(logos_paths, product_paths)
+        snippet = build_assets_prompt_snippet(feats)
+        if snippet and snippet not in enhanced_prompt:
+            enhanced_prompt = f"{enhanced_prompt}\n\n{snippet}"
+
     posters = generate_poster(enhanced_prompt, aspect_ratio)
 
     # Optional iterative evaluation/edit loop
@@ -75,6 +85,14 @@ def generate():
                     break
     except Exception:
         # If anything fails in eval loop, we gracefully fall back to initial posters
+        pass
+
+    # Overlay uploaded assets on the last/best image as an extra variant
+    try:
+        if (logos_paths or product_paths) and all_images:
+            composed = overlay_assets_on_image(all_images[-1], product_paths, logos_paths)
+            all_images.append(composed)
+    except Exception:
         pass
 
     return displayPosters_with_default_logos(all_images, prompt, aspect_ratio, eval_metadata=eval_metadata)

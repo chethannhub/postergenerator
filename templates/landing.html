@@ -25,7 +25,7 @@
             <p>Describe your idea and let AI generate a beautiful, professional poster for you. Add your logo, download, and view your history anytime.</p>
         </div>
         <div class="glass-card fade-in" style="max-width: 600px; margin: 0 auto;">
-            <form action="/enhance" method="post">
+            <form action="/enhance" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="prompt" class="form-label">
                         <i class="fas fa-lightbulb"></i> Describe your poster
@@ -41,6 +41,16 @@
                         <option value="1:1">1:1 (Square) for static feed post</option>
                         <option value="16:9">16:9 (Horizontal) for cover photos</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-images"></i> Upload Logos (optional)</label>
+                    <input type="file" name="logos" accept="image/*" multiple class="form-input">
+                    <div class="help-text">Add up to a few brand logos to overlay later.</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-box"></i> Upload Product Images (optional)</label>
+                    <input type="file" name="products" accept="image/*" multiple class="form-input">
+                    <div class="help-text">Add product shots to place on the final poster.</div>
                 </div>
                 <div class="form-group" style="text-align:center;">
                     <button type="submit" class="btn btn-primary">

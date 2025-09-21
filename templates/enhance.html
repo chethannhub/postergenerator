@@ -71,9 +71,11 @@
                 <div style="font-size:1.13em; color:var(--text-primary); font-weight:500;">{{ enhanced_prompt }}</div>
             </div>
             <form id="enhance-select-form" action="/generate" method="post">
-                <input type="hidden" name="prompt" value="{{ prompt }}">
+                <input type="hidden" name="prompt" value="{{ original_prompt }}">
                 <input type="hidden" name="enhanced_prompt" value="{{ enhanced_prompt }}">
                 <input type="hidden" name="aspect_ratio" value="{{ aspect_ratio }}">
+                <input type="hidden" name="logos_paths" value='{{ logos_paths_json|default("[]") }}'>
+                <input type="hidden" name="product_paths" value='{{ products_paths_json|default("[]") }}'>
                 <div class="enhance-features" id="objects-section">
                     <div style="font-size:1.07em; color:var(--text-secondary); margin-bottom:0.4em;">Suggested Objects & Motifs:</div>
                     <div id="objects-list">

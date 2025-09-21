@@ -1,145 +1,177 @@
 # Poster Generator
 
-A modular Flask application that leverages AI models (Gemini and Imagen) to enhance user prompts, generate high-quality posters, overlay logos, and track generation history. This project is designed for creative professionals and developers looking to automate poster creation with AI.
+A modular Flask app that uses Google Gemini and Imagen to enhance prompts, generate poster images, optionally add text, overlay logos, and track generation history. Built for creatives and developers who want fast, AI-assisted poster creation.
 
 ---
 
-## **Features**
-- **AI-Powered Prompt Enhancement**: Enhance user-provided prompts using the Gemini model.
-- **Multiple Variants + Ranking**: Generate 3 enhanced prompt variants via Gemini and rank them with OpenAI to pick the best before generation.
-- **Poster Generation**: Generate high-quality poster images with the Imagen model.
-- **Logo Overlay**: Automatically discover and overlay logos on generated posters.
-- **Watermark Support**: Add watermarks to posters for branding.
-- **History Tracking**: Persist generation history in JSON format for easy retrieval.
-- **Customizable Workflow**: Modify logo directories, overlay settings, and generation parameters.
+## Highlights
+- AI prompt enhancement (Gemini)
+- 3x variant generation + ranking (OpenAI)
+- Poster generation (Imagen or Gemini, configurable)
+- Optional text overlay on posters (OpenAI-guided placement; Cairo rendering)
+- Automatic logo discovery/overlay and watermarking
+- JSON history of all generations
 
 ---
 
-## **Project Structure**
+## Project structure
 ```
 app/
-  __init__.py          # App factory: initializes the app, loads environment variables, registers blueprints
+  __init__.py          # App factory; registers blueprints and loads .env
   routes/
-    base.py            # Routes for landing page and history
-    enhance.py         # Routes for prompt enhancement and feature extraction
-    generate.py        # Routes for poster generation and logo overlay
+    base.py            # Landing + history pages
+    enhance.py         # Prompt enhancement flow and optional eval/edit
+    generate.py        # Image generation + logo overlay
   services/
-    gemini.py          # Handles Gemini API integration for prompt enhancement
-    imagen.py          # Handles Imagen API integration for poster generation
+    gemini.py          # Gemini client + prompt enhancer
+    imagen.py          # Imagen/Gemini image generation and edit-by-image
+    openai_eval.py     # OpenAI scoring for prompt variants
+    openai_image_eval.py # OpenAI image evaluation + edit loop guidance
+    test_layer.py      # Text placement analysis and Cairo text rendering
   utils/
-    logos.py           # Utilities for logo overlay, watermarking, and positioning
+    logos.py           # Logo/watermark helpers and placement
+    assets.py          # Asset upload, feature extraction, composition hints
   persistence/
-    history.py         # Utilities for loading and saving generation history
-static/                # Static assets (CSS, JavaScript)
-templates/             # HTML templates for the web interface
-background/            # Background assets for posters
-KALA/                  # Default directory for logo files
-app.py                 # Entry point for running the application
+    history.py         # Load/save `generation_history.json`
+static/                # CSS/JS
+templates/             # HTML templates
+KALA/                  # Example logos (default LOGO_DIR)
+app.py                 # Entry point (creates and runs the app)
 ```
 
 ---
 
-## **Environment Setup**
-Create a [`.env`](.env ) file in the project root to configure environment variables:
+## Quick start (Windows PowerShell)
+```pwsh
+# 1) Create and activate a virtual env
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# 2) Install dependencies
+pip install -r requirements.txt
+
+# 3) Create a .env with your keys (see below)
+
+# 4) Run
+python .\app.py
+# App: http://127.0.0.1:5000/
+```
+
+Optional (if you prefer Flask’s CLI):
+```pwsh
+$env:FLASK_APP = "app.py"
+flask run --debug
+```
+
+---
+
+## Environment variables (.env)
+Paste this template into a file named `.env` in the project root and fill in values.
 ```env
-FLASK_SECRET_KEY=your_flask_secret_key
-GEMINI_API_KEY_UNBILLED=your_gemini_key_for_text
-GEMINI_API_KEY_BILLED=your_gemini_key_for_imagen
-OPENAI_API_KEY=your_openai_api_key   # Optional; if missing, a simple fallback ranking is used
-OPENAI_EVAL_MODEL=gpt-4o-mini        # Optional; default as shown
-IMAGE_GENERATOR=imagen               # imagen | gemini (selects image engine)
+# Flask
+FLASK_SECRET_KEY=change_me
+
+# Google Gemini/Imagen
+GEMINI_API_KEY_UNBILLED=your_key_for_text_and_general
+GEMINI_API_KEY_BILLED=your_key_for_image_gen
+IMAGE_GENERATOR=imagen                 # imagen | gemini
 IMAGEN_MODEL=models/imagen-4.0-generate-preview-06-06
 GEMINI_IMAGE_MODEL=models/gemini-2.5-flash-image-preview
 NUMBER_OF_IMAGES=2
-LOGO_DIR=KALA                # Directory for logo files (default: KALA)
-WATERMARK_LOGO=kala.png      # Path to the watermark image (optional)
 
-# Evaluation/edit loop (optional)
+# OpenAI (prompt/image evaluation and text placement)
+OPENAI_API_KEY=your_openai_key
+OPENAI_EVAL_MODEL=gpt-4o-mini         # prompt ranking (openai_eval.py)
+OPENAI_IMAGE_EVAL_MODEL=gpt-4o-mini   # image eval (falls back to OPENAI_EVAL_MODEL)
+OPENAI_IMAGE_EVAL_FALLBACK_MODEL=gpt-4o-mini
+
+# Feature flags
+GENERATE_PROMPT_VARIANTS=true         # enhance.py – create N variants and rank
+NO_SUGGESTIONS_PAGE=false             # if true, skip suggestions step and generate directly
+ADD_TEXT_TO_POSTER=true               # enable text layer (requires Cairo); set false if Cairo not installed
+
+# Assets / overlay
+LOGO_DIR=KALA                         # directory to auto-discover logos
+WATERMARK_LOGO=kala.png               # optional watermark image
+DISABLE_LOGO_OVERLAY=false            # disable auto logo overlay entirely
+
+# Use user-uploaded assets in generation
+# Note: two separate flags used in different modules
+USE_USER_ASSETS_IN_IMAGE_GEN=false    # gemini.py – influences prompt enhancement with assets
+USE_USER_ASSET_IMAGE_GEN=true         # imagen.py – includes uploaded assets during image gen
+
+# Iterative evaluation/edit loop (optional)
 EVAL_ENABLED=true
-OPENAI_IMAGE_EVAL_MODEL=gpt-5  # Falls back to OPENAI_EVAL_MODEL if unavailable
 EVAL_TARGET_SCORE=9.5
 EVAL_MAX_ITERS=6
 EVAL_NO_IMPROVEMENT_STOP=true
 ```
 
----
-
-## **Installation**
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/poster-generator.git
-   cd poster-generator
-   ```
-2. Create a virtual environment:
-   ```bash
-   python -m venv .venv
-   ```
-3. Activate the virtual environment:
-   - **Windows (PowerShell):**
-     ```bash
-     .\.venv\Scripts\Activate.ps1
-     ```
-   - **Linux/Mac:**
-     ```bash
-     source .venv/bin/activate
-     ```
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+Notes
+- If you don’t need OpenAI features (ranking, image eval, or text overlay), you can still run generation and enhancement with only the Gemini keys.
+- Imagen model availability may depend on your Google account access.
 
 ---
 
-## **Running the Application**
-Start the Flask application:
-```bash
-flask run --debug
+## How it works
+1. Enter your prompt and choose an aspect ratio on the landing page.
+2. Gemini produces multiple enhanced prompt variants (if enabled).
+3. OpenAI ranks the variants and selects the best one.
+4. Imagen (or Gemini image) generates poster images.
+5. Optional: OpenAI evaluates images and suggests edits; Gemini applies edit-by-image in a loop until a target score or stop condition.
+6. Optional: A text layer is added using OpenAI-guided placement and rendered via Cairo for crisp text.
+7. Logos (from `LOGO_DIR`) and optional watermark are overlaid. Results are saved to `generation_history.json`.
+
+---
+
+## Routes (UI and APIs)
+- GET `/` – Landing page
+- GET `/history` – Generation history
+- POST `/enhance` – Enhance prompt (optionally continues into generate flow)
+- POST `/generate` – Generate posters from enhanced prompt
+- POST `/generate-poster` – JSON API: { prompt, aspect_ratio } → images (base64)
+
+---
+
+## Customization
+- Logos: add/replace files under the folder defined by `LOGO_DIR` (default: `KALA/`).
+- Watermark: set `WATERMARK_LOGO` to any image path (relative or absolute).
+- Image engine: set `IMAGE_GENERATOR` to `imagen` (default) or `gemini`.
+- Count/ratio: tweak `NUMBER_OF_IMAGES` and pass aspect ratio from the UI.
+- Assets: upload logos/products with your prompt; they’ll inform prompts and can be composited onto results.
+
+---
+
+## Data and persistence
+- File: `generation_history.json` (append-only log used in UI)
+- Uploads: files you upload during a session are stored under `uploads/`
+
+Example entry:
+```json
+{
+  "prompt": "Enhanced prompt text",
+  "aspect_ratio": "16:9",
+  "posters": [
+    { "id": "poster_0", "image": "<base64>", "width": 1920, "height": 1080 }
+  ],
+  "timestamp": "2025-09-14T12:00:00Z"
+}
 ```
-The app will be available at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ---
 
-## **Workflow**
-1. **Prompt Input**: The user provides an initial prompt and selects an aspect ratio.
-2. **Variants Generation**: Gemini produces 3 diverse enhanced prompts (JSON array).
-3. **Ranking**: OpenAI evaluates the three prompts (system+user rubric) and returns the best one.
-4. **Poster Generation**: The Imagen model generates poster candidates from the best prompt.
-4. **Logo Overlay**: Logos are automatically discovered from the `LOGO_DIR` and overlaid on the posters.
-5. **History Tracking**: Generated posters and metadata are saved to [`generation_history.json`](generation_history.json ) for future reference.
+## Troubleshooting
+- OpenAI/Gemini auth: double-check keys in `.env`. Ensure your account has access to the specified models.
+- Cairo on Windows: the text layer uses Cairo. If Cairo runtime isn’t available, installs may fail. Quick workaround: set `ADD_TEXT_TO_POSTER=false`. Otherwise, install the Cairo library and `pycairo` (or `cairocffi`).
+- Imagen access: the default `IMAGEN_MODEL` may be preview/restricted; choose a model you can access.
+- Logo/watermark paths: verify `LOGO_DIR` exists and `WATERMARK_LOGO` points to an image file.
+- Port already in use: change the port in `app.py` or stop the conflicting process.
 
 ---
 
-## **Customization**
-- **Logos**: Add or replace logos in the directory specified by `LOGO_DIR`.
-- **Watermark**: Update the `WATERMARK_LOGO` path to use a custom watermark.
-- **Generation Parameters**: Modify poster generation settings (e.g., aspect ratio, number of images) in [`app/services/imagen.py`](app/services/imagen.py ).
-- **Routes**: Add new routes in [`app/routes`](app/routes ) and register them in `create_app()`.
+## Development notes
+- Entry points: either `python app.py` or `flask run` (with `FLASK_APP=app.py`).
+- Config is read from `.env` (via `python-dotenv`).
+- Requirements: see `requirements.txt`. If Cairo is problematic, disable the text layer as noted.
 
----
-
-## **History Persistence**
-- **File**: [`generation_history.json`](generation_history.json )
-- **Structure**:
-  ```json
-  {
-    "prompt": "Enhanced prompt text",
-    "aspect_ratio": "16:9",
-    "posters": [
-      {
-        "id": "unique_id",
-        "image": "base64_encoded_image",
-        "width": 1920,
-        "height": 1080
-      }
-    ],
-    "timestamp": "2025-09-14T12:00:00Z"
-  }
-  ```
-
----
-
-## **Troubleshooting**
-- **Model Errors**: Ensure the correct model names are used and your API key has access to the specified models.
-- **Logo Issues**: Verify that logo files exist in the `LOGO_DIR` and are valid image files.
-- **Watermark Issues**: Check the `WATERMARK_LOGO` path and ensure the file exists.
-- **History Not Saving**: Ensure the application has write permissions to the project directory.
+Contributions welcome. Enjoy creating posters!
