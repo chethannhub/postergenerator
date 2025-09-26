@@ -6,12 +6,24 @@ from openai import OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def _parse_eval_json(text: str, image_count: int) -> Dict[str, Any]:
-    print("\n_parse_eval_json called")
     data = json.loads(text)
-    picked = int(data.get("picked_index", 0))
-    score = float(data.get("score", 0))
-    rationale = str(data.get("rationale", ""))
-    edit_instructions = str(data.get("edit_instructions", ""))
+    
+    print("\n_parse_eval_json called with data: ", data)
+    
+    # Handle structured response format with json_schema
+    if isinstance(data, dict) and "json_schema" in data:
+        # Extract the actual schema properties from the structured response
+        schema_data = data.get("json_schema", {}).get("schema", {}).get("properties", {})
+        picked = int(schema_data.get("picked_index", 0))
+        score = float(schema_data.get("score", 0))
+        rationale = str(schema_data.get("rationale", ""))
+        edit_instructions = str(schema_data.get("edit_instructions", ""))
+    else:
+        # Fallback to direct parsing for backward compatibility
+        picked = int(data.get("picked_index", 0))
+        score = float(data.get("score", 0))
+        rationale = str(data.get("rationale", ""))
+        edit_instructions = str(data.get("edit_instructions", ""))
     
     print(f"\nParsed eval JSON: picked_index={picked}, score={score}, rationale={rationale}, edit_instructions={edit_instructions}\n")
     
@@ -39,14 +51,17 @@ EVAL_IMAGE_SYSTEM_PROMPT = (
             
         Evaluation criteria:
         1. Text: No text, letters, words, numbers, typography, captions, subtitles, stamps, signatures, UI overlays, QR codes, banners, or signs in the image.
-        2. Brand integration (skip if brand_assets_present = false): integrate provided brand assets subtly with correct proportion, placement, and lighting; do not fabricate or alter logos/products; blend with background cleanly. 
+        2. Brand integration (skip if brand_assets_present): integrate provided brand assets subtly with correct proportion, placement, and lighting; do not fabricate or alter logos/products; blend with background cleanly. 
         3. Background design: Complete background with no cut-off objects or floating elements; contextually relevant but not distracting; subtle depth cues (lighting, focus, scale, overlap) to separate subject from background.
         4. People and characters: Proper poses, natural expressions, and interactions that suit the poster's purpose and audience.
             - Especially eyes in accurate and precise position and design.
         5. Scene logic & plausibility: physically coherent setup, materials, and lighting consistent with the stated poster type and audience.
         6. Micro-details: high fidelity details, realistic textures, and natural imperfections (e.g., skin pores, fabric weave, surface reflections); avoid blurriness, smudges, or oversimplification.
         7. Themes & moods: Accurately reflect the intended themes and moods (e.g., festive, professional, casual, elegant) through composition, color palette, lighting, and subject matter.
-        8. If any festival themes are mentioned, include relevant cultural symbols, characters, colors, and motifs.
+        8. Festival themes: Appropriate festive symbols/motifs integrated tastefully with a matching palette (e.g., deepas, rangoli, rama and ravana for Diwali).
+        9. Negative space: Clear top/bottom breathing room; subject separated; background does not compete with future copy
+           - If text is to be added (in future) to objects in the image, create a consistent layer (like blurring background, adding a layer of appropriate color/texture) on the original image
+        10. User provided facts: Accurately represent any specific factual visual elements mentioned in the prompt (e.g., product details, event info, number of persons) without fabrication.
 
         Output requirements:
         Return ONLY a single JSON object with:
@@ -102,13 +117,8 @@ def evaluate_images(images: List[Image.Image], user_prompt: str, enhanced_user_p
 
         response = client.responses.create(
         model=OPENAI_IMAGE_EVAL_MODEL,
+        instructions=EVAL_IMAGE_SYSTEM_PROMPT,
         input=[
-            {
-                "role": "system",
-                "content": [
-                    {"type": "input_text", "text": EVAL_IMAGE_SYSTEM_PROMPT}
-                ],
-            },
             {
                 "role": "user",
                 "content": [

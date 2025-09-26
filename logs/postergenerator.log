@@ -2657,3 +2657,804 @@ INFO app.main: Drawing text (cairo): drew element 1 "Happy Diwali"
 INFO app.main: Text Layer: Successfully completed text addition process
 INFO app.main: Generate: done (3 posters)
 
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO app.main: Enhance: done -> redirecting to suggestions page
+
+INFO app.main: Generate: start (aspect=9:16)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Dynamic Text Layer: Iteration 1/1
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+ERROR app.main: Script Generation: Error generating script: 'ChatCompletion' object has no attribute 'output_text'
+ERROR app.main: Dynamic Text Layer: Error in create_dynamic_text_overlay: 'ChatCompletion' object has no attribute 'output_text'
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house. 2. ⁠4 memb"
+INFO app.main: Dynamic Text Layer: Iteration 1/1
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+ERROR app.main: Script Generation: Error generating script: Responses.create() got an unexpected keyword argument 'messages'
+ERROR app.main: Dynamic Text Layer: Error in create_dynamic_text_overlay: Responses.create() got an unexpected keyword argument 'messages'
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house. 2. ⁠4 memb"
+INFO app.main: Dynamic Text Layer: Iteration 1/1
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+ERROR app.main: Script Generation: Error generating script: Responses.create() got an unexpected keyword argument 'max_tokens'
+ERROR app.main: Dynamic Text Layer: Error in create_dynamic_text_overlay: Responses.create() got an unexpected keyword argument 'max_tokens'
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house. 2. ⁠4 memb"
+INFO app.main: Dynamic Text Layer: Iteration 1/1
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+ERROR app.main: Script Generation: Error generating script: Error code: 400 - {'error': {'message': "Invalid value: 'text'. Supported values are: 'input_text', 'input_image', 'output_text', 'refusal', 'input_file', 'computer_screenshot', and 'summary_text'.", 'type': 'invalid_request_error', 'param': 'input[0].content[0].type', 'code': 'invalid_value'}}
+ERROR app.main: Dynamic Text Layer: Error in create_dynamic_text_overlay: Error code: 400 - {'error': {'message': "Invalid value: 'text'. Supported values are: 'input_text', 'input_image', 'output_text', 'refusal', 'input_file', 'computer_screenshot', and 'summary_text'.", 'type': 'invalid_request_error', 'param': 'input[0].content[0].type', 'code': 'invalid_value'}}
+INFO app.main: Generate: done (1 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house. 2. ⁠4 memb"
+INFO app.main: Dynamic Text Layer: Iteration 1/1
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Cache: Saved script_generation_a3fd1d5b8549_2c084710
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated initial script
+ERROR app.main: Script Execution: Error executing script: 'charmap' codec can't encode character '\u2060' in position 3177: character maps to <undefined>
+ERROR app.main: Dynamic Text Layer: Script execution failed in iteration 1
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house. 2. ⁠4 memb"
+INFO app.main: Dynamic Text Layer: Iteration 1/1
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Cache: Saved script_generation_722a0e9a52a3_2c084710
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated initial script
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Cache: Saved evaluation_e0ad050ec58a_12263983
+INFO app.main: Script Evaluation: Overall score: 7.6
+INFO app.main: Dynamic Text Layer: Iteration 1 score: 7.6
+INFO app.main: Dynamic Text Layer: Using corrected script for next iteration
+INFO app.main: Dynamic Text Layer: Process completed with 1 iterations
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting dynamic text overlay process for prompt: "I am a Navdor, a wedding wear showroom at Gachibowli Hyderabad. I want to showcase my new Maharaja c"
+INFO app.main: Dynamic Text Layer: Iteration 1/3
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated initial script
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 7.5
+INFO app.main: Dynamic Text Layer: Iteration 1 score: 7.5
+INFO app.main: Dynamic Text Layer: Using corrected script for next iteration
+INFO app.main: Dynamic Text Layer: Iteration 2/3
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 7.5
+INFO app.main: Dynamic Text Layer: Iteration 2 score: 7.5
+INFO app.main: Dynamic Text Layer: Using corrected script for next iteration
+INFO app.main: Dynamic Text Layer: Iteration 3/3
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 7.5
+INFO app.main: Dynamic Text Layer: Iteration 3 score: 7.5
+INFO app.main: Dynamic Text Layer: Using corrected script for next iteration
+INFO app.main: Dynamic Text Layer: Process completed with 3 iterations
+INFO app.main: Generate: done (2 posters)
+
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Generate: done (0 posters)
+
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Script Execution: Running generated script
+ERROR app.main: Script Execution: Script failed with error:   File "C:\Users\Cheth\AppData\Local\Temp\tmpv9ioh6dd.py", line 67
+    main("C:\\Users\\Cheth\\AppData\\Local\\Temp\\tmpcfnxrqlt\\input.png", "C:\\Users\\Cheth\\AppData\\Local\\Temp\\tmpcfnxrqlt\\output.png", "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+                                                                                                                                              ^
+SyntaxError: unterminated string literal (detected at line 67)
+
+ERROR app.main: Dynamic Text Layer: Script execution failed
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250922_201426_37e7b7da.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+ERROR app.main: Script Execution: Script failed with error:   File "E:\postergenerator\temp\scripts\text_layering_script_20250922_201511_8bf59ebe.py", line 69
+    main("E:\\postergenerator\\temp\\images\\dynamic_input_20250922_201439_dd27289e.png", "E:\\postergenerator\\temp\\images\\dynamic_output_20250922_201439_ef1e5989.png", "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+                                                                                                                                                                            ^
+SyntaxError: unterminated string literal (detected at line 69)
+
+ERROR app.main: Dynamic Text Layer: Script execution failed
+INFO app.main: Generate: done (1 posters)
+
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250922_202923_5062e8ba.png
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved edited poster 0 to: E:\postergenerator\temp\images\edited_poster_0_20250922_202958_cf195890.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 7.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Generate: done (4 posters)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250922_213758_dac48543.png
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved edited poster 0 to: E:\postergenerator\temp\images\edited_poster_0_20250922_213856_372ca387.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "create a poster wishing happy diwali along with Hero Spender bike on right side and one men just bes"
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 6.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Generate: done (4 posters)
+
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250922_214529_bef628ea.png
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved edited poster 0 to: E:\postergenerator\temp\images\edited_poster_0_20250922_214556_32ea2cfa.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "make a happy dasara poster for fashion designing company "Gatrika by Yashodh""
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 7.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script
+INFO app.main: Script Execution: Script executed successfully
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Generate: done (4 posters)
+
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250923_061918_531d8127.png
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved edited poster 0 to: E:\postergenerator\temp\images\edited_poster_0_20250923_061949_3da39a30.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_062024_d34d10c3.py
+INFO app.main: Script Execution: Script executed successfully, saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_062024_d34d10c3.py
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 6.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_062112_2e3452ce.py
+INFO app.main: Script Execution: Script executed successfully, saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_062112_2e3452ce.py
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 6.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_062156_d70036c7.py
+INFO app.main: Script Execution: Script executed successfully, saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_062156_d70036c7.py
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Generate: done (5 posters)
+
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250923_065227_ab277942.png
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved edited poster 0 to: E:\postergenerator\temp\images\edited_poster_0_20250923_065252_21f5715e.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_065347_7f5742ad.py
+ERROR app.main: Script Execution: Script failed with error: Traceback (most recent call last):
+  File "E:\postergenerator\temp\scripts\text_layering_script_20250923_065347_7f5742ad.py", line 86, in <module>
+    main('E:\\postergenerator\\temp\\images\\dynamic_input_20250923_065304_901c9876.png', 'E:\\postergenerator\\temp\\images\\dynamic_output_20250923_065304_2c53b3f5.png', '1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.\r\n2. \u20604 member family with 2 adults and 2 kids.\r\n3. \u2060A blue Hyundai Verna is parked to the right side of their house.\r\n4. \u2060Fireworks are reflected on its windshield as if its participating in the\xa0celebration.')
+    ^^^^
+NameError: name 'main' is not defined. Did you mean: 'min'?
+
+INFO app.main: Script Execution: Failed script saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_065347_7f5742ad.py for debugging
+ERROR app.main: Dynamic Text Layer: Script execution failed
+INFO app.main: Generate: done (2 posters)
+
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Enhance: start (aspect=9:16)
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Enhance: single enhanced prompt generated
+
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved Gemini poster 0 to: E:\postergenerator\temp\images\gemini_poster_0_20250923_070256_9bf1c507.png
+INFO google_genai.models: AFC is enabled with max remote calls: 10.
+INFO google_genai.models: AFC remote call 1 is done.
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Saved edited poster 0 to: E:\postergenerator\temp\images\edited_poster_0_20250923_070328_9024a277.png
+INFO app.main: Dynamic Text Layer: Starting single iteration for prompt: "1. Create a Diwali poster with an happy family enjoying fireworks infront of their house.
+2. ⁠4 mem"
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Generation: Calling OpenAI to generate text overlay script
+INFO app.main: Script Generation: Successfully generated Python script
+INFO app.main: Dynamic Text Layer: Generated new script
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_070419_aa396655.py
+INFO app.main: Script Execution: Script executed successfully, saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_070419_aa396655.py
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 6.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_070512_9e69bfcf.py
+INFO app.main: Script Execution: Script executed successfully, saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_070512_9e69bfcf.py
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Script Evaluation: Calling OpenAI to evaluate result and correct script
+INFO app.main: Script Evaluation: Overall score: 6.5
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+INFO app.main: Script Execution: Running generated script from E:\postergenerator\temp\scripts\text_layering_script_20250923_070602_377d24d2.py
+INFO app.main: Script Execution: Script executed successfully, saved at E:\postergenerator\temp\scripts\text_layering_script_20250923_070602_377d24d2.py
+INFO app.main: Script Evaluation: Provided corrected script
+INFO app.main: Generate: done (5 posters)
+
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!
+INFO app.main: Temp directories ensured: E:\postergenerator\temp
+WARNING werkzeug:  * Debugger is active!

@@ -6,7 +6,6 @@ from PIL import Image, ImageDraw, ImageFont
 import base64
 from io import BytesIO
 
-from tenacity import retry, stop_after_attempt, wait_exponential
 from openai import OpenAI
 
 # Configuration
@@ -68,7 +67,6 @@ def _encode_image_to_base64(image: Image.Image) -> str:
     buffer.seek(0)
     return base64.b64encode(buffer.getvalue()).decode('utf-8')
 
-# @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=6))
 def analyze_image_for_text_placement(image: Image.Image, user_prompt: str) -> Dict[str, Any]:
     print("\nanalyze_image_for_text_placement called")
     
@@ -94,13 +92,10 @@ def analyze_image_for_text_placement(image: Image.Image, user_prompt: str) -> Di
         
         _log.info('Text Analysis: Calling OpenAI Vision API for text placement analysis')
         
-        response = client.chat.completions.create(
+        response = client.responses.create(
             model=OPENAI_MODEL_DEFAULT,
-            messages=[
-                {
-                    "role": "system",
-                    "content": TEXT_ANALYSIS_SYSTEM_PROMPT
-                },
+            instructions=TEXT_ANALYSIS_SYSTEM_PROMPT,
+            input=[
                 {
                     "role": "user",
                     "content": [
@@ -117,7 +112,6 @@ def analyze_image_for_text_placement(image: Image.Image, user_prompt: str) -> Di
                     ]
                 }
             ],
-            max_tokens=1000,
             temperature=0.3
         )
         

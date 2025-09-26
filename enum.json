@@ -1,0 +1,36 @@
+{
+    "aspect_ratio": [
+        
+        "9:16",
+        "4:5",
+        "1:1",
+        "16:9",
+        "3:4",
+        "2:3"
+    
+    ],
+  "style": {
+    "type": [
+      "Photorealistic photography",
+      "Cinematic photography",
+      "Editorial/Fashion photography",
+      "Studio portrait photography",
+      "Vector illustration",
+      "Flat illustration",
+      "Line art illustration",
+      "Watercolor painting",
+      "Digital painting (realism)",
+      "Digital painting (semi-realism)",
+      "3D render/illustration",
+      "Pop art",
+      "Art Deco",
+      "Vintage/Retro (American Kitsch)",
+      "Grunge",
+      "Psychedelic",
+      "Minimalist",
+      "Swiss/International Typographic Style",
+      "Typography-only (type poster)",
+      "Collage/Mixed media"
+    ]
+  }
+}

@@ -19,10 +19,6 @@ exhibiting agency-grade craft with grid-based layout, consistent margins, clear 
 
 Keep scenes logical, realistic setup and physically plausible for the intended audience.
 
-NOTE: IF THE USER UPLOADED BRANDING ASSETS (LOGOS/PRODUCTS), INCORPORATE THEM SUBTLY INTO THE DESIGN AND PROPERLY USE THEM, WITH BETTER INTEGRATION, COMPLETE BACKGROUND DESIGN AND REMOVE UNWANTED OBJECTS IN THE UPLOADED IMAGES.
-    IF USER UPLOADED PRODUCT IMAGES, INCORPORATE THE PRODUCT INTO THE SCENE AS A PACKSHOT, APPLY PACKSHOT GUARDRAILS (UNIFORM BACKGROUND, CONTACT SHADOW, RIM LIGHT, PERSPECTIVE-CORRECT REFLECTION).
-    DO NOT CREATE YOUR OWN PRODUCTS OR LOGOS, IF USER UPLOADED BRANDING ASSETS, USE THEM IN THE DESIGN.
-
 When crafting the description, think through the checklist below,
 but OUTPUT ONLY a single coherent prompt string ready for Imagen (one paragraph, no lists).
 Do not include section labels or numbering in the output.
@@ -57,8 +53,10 @@ Do not include section labels or numbering in the output.
 - Their positioning, appearance, style and shapes
 - camera perspective, depth-of-field, and visual effects
 - include iconographic/decorative elements only if they support the message and do not compete with the focal point.
+- If any festival themes are mentioned, include relevant cultural symbols, characters, colors, and motifs.
+- If text is to be added to objects in the image, create a consistent layer (like blurring background, adding a layer of appropriate color/texture) on the original image
 
-8. COLOR SCHEME: 
+8. COLOR SCHEME:
 - select a disciplined palette with dominant/secondary/accent roles to evoke the goal emotion (e.g., warm reds/oranges/yellows to stimulate appetite and energy; fresh greens for health/nature; deep teal with restrained gold for luxury and calm focus). Maintain high subject-background contrast for fast first read.
 - Specify the exact color palette using descriptive names (e.g., "deep blue," "bright red," "white," "light grey") 
 
@@ -71,7 +69,7 @@ Do not include section labels or numbering in the output.
 - if illustrative/flat design, specify crisp edges and consistent line weight
 - use 4k/HDR/photostudio/photorealistic only when photographic style is intended.
 
-11. NEGATIVE PROMPT (append as a concise noun list): letters, text, words, numbers, typography, captions, subtitles, stamps, signatures, UI overlays, QR codes, banners, signs.
+# 11. NEGATIVE PROMPT (append as a concise noun list): letters, text, words, numbers, typography, captions, subtitles, stamps, signatures, UI overlays, QR codes, banners, signs.
 
 12. PACKSHOT GUARDRAILS (apply only if product/packshot is implied): 
 - uniform seamless background without banding/vignettes; 
@@ -90,8 +88,9 @@ def enhance_prompt(user_prompt: str, saved_logos: list[str], saved_products: lis
     response_text = ""
     
     if USE_USER_ASSETS_IN_IMAGE_GEN and (saved_logos or saved_products):
-        uploaded_logos = [client.files.upload(file=MEDIA_DIR / p) for p in saved_logos]
-        uploaded_products = [client.files.upload(file=MEDIA_DIR / p) for p in saved_products]
+        # Use absolute paths for AI model uploads
+        uploaded_logos = [client.files.upload(file=Path(p).absolute() if Path(p).is_absolute() else MEDIA_DIR / p) for p in saved_logos]
+        uploaded_products = [client.files.upload(file=Path(p).absolute() if Path(p).is_absolute() else MEDIA_DIR / p) for p in saved_products]
 
         system_prompt = ENHANCE_SYSTEM_PROMPT.format(branding="Incorporate branding elements subtly into the design and properly use them, with better integration, complete background design and remove unwanted objects in the uploaded images.")
 
@@ -104,7 +103,7 @@ def enhance_prompt(user_prompt: str, saved_logos: list[str], saved_products: lis
                 response_text += chunk.text
                    
     else:
-        system_prompt = ENHANCE_SYSTEM_PROMPT.format(branding="Do not include or render any branding logos, or text in the design.")
+        system_prompt = ENHANCE_SYSTEM_PROMPT.format(branding="Do not include or render any branding logos, products, or text in the design. Focus on creating a clean background composition that will serve as a base for later asset overlay. Avoid generating any product representations or logo designs - just provide an appealing background scene.")
 
         for chunk in client.models.generate_content_stream(
             model=PROMPT_ENHANCER_MODEL,
@@ -137,8 +136,9 @@ def enhance_prompt_variants(user_prompt: str, saved_logos: list[str], saved_prod
     raw = ""
     
     if USE_USER_ASSETS_IN_IMAGE_GEN and (saved_logos or saved_products):
-        uploaded_logos = [client.files.upload(file=MEDIA_DIR / p) for p in saved_logos]
-        uploaded_products = [client.files.upload(file=MEDIA_DIR / p) for p in saved_products]
+        # Use absolute paths for AI model uploads  
+        uploaded_logos = [client.files.upload(file=Path(p).absolute() if Path(p).is_absolute() else MEDIA_DIR / p) for p in saved_logos]
+        uploaded_products = [client.files.upload(file=Path(p).absolute() if Path(p).is_absolute() else MEDIA_DIR / p) for p in saved_products]
 
         system_prompt = ENHANCE_SYSTEM_PROMPT.format(branding="Incorporate branding elements subtly into the design and properly use them, with better integration, complete background design and remove unwanted objects in the uploaded images.")
         

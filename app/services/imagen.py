@@ -6,6 +6,7 @@ from google.genai.types import GenerateContentConfig, Modality
 from PIL import Image
 from google import genai
 from pathlib import Path
+from ..utils.temp_manager import get_temp_image_path, get_session_temp_paths
 
 MEDIA_DIR = Path(__file__).parent / "media"
 
@@ -25,9 +26,9 @@ GEMINI_IMAGE_MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "models/gemini-2.5-fla
 USE_USER_ASSET_IMAGE_GEN = (os.environ.get("USE_USER_ASSET_IMAGE_GEN", "true").strip().lower() in ("1", "true", "yes", "on"))
 
 try:
-    NUMBER_OF_IMAGES = int(os.environ.get("NUMBER_OF_IMAGES", "2"))
+    NUMBER_OF_IMAGES = int(os.environ.get("NUMBER_OF_IMAGES", "1"))
 except Exception:
-    NUMBER_OF_IMAGES = 2
+    NUMBER_OF_IMAGES = 1
 
 def _build_config_common(aspect_ratio: str):
     return dict(
@@ -36,10 +37,21 @@ def _build_config_common(aspect_ratio: str):
         aspect_ratio=aspect_ratio,
     )
 
-def generate_poster_imagen(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str]):
+def generate_poster_imagen(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str], save_to_temp: bool = True):
     print("\ngenerate_poster_imagen called")
     
-    """Generate images using Imagen model with Imagen-specific options."""
+    """Generate images using Imagen model with Imagen-specific options.
+    
+    Args:
+        prompt: Text prompt for generation
+        aspect_ratio: Image aspect ratio
+        saved_logos: List of logo file paths  
+        saved_products: List of product file paths
+        save_to_temp: Whether to save generated images to temp folder
+        
+    Returns:
+        List of tuples (PIL.Image, absolute_path) if save_to_temp=True, else list of PIL.Image
+    """
     
     config = _build_config_common(aspect_ratio)
     config["person_generation"] = "ALLOW_ADULT"
@@ -50,6 +62,9 @@ def generate_poster_imagen(prompt: str, aspect_ratio: str, saved_logos: list[str
     if client is None:
         raise RuntimeError("Imagen: No GEMINI_API_KEY_BILLED or GEMINI_API_KEY_UNBILLED configured")   
 
+    # When USE_USER_ASSET_IMAGE_GEN is false, ensure we don't generate logos/products
+    if not USE_USER_ASSET_IMAGE_GEN and (saved_logos or saved_products):
+        prompt += "\n\nIMPORTANT: Do not generate any logos, product images, or branded elements. Create a clean background composition only."
 
     result = client.models.generate_images(
         model=IMAGEN_MODEL,
@@ -58,14 +73,43 @@ def generate_poster_imagen(prompt: str, aspect_ratio: str, saved_logos: list[str
     )
     if not getattr(result, 'generated_images', None):
         return []
+    
     images = [Image.open(BytesIO(img.image.image_bytes)).convert("RGBA") for img in result.generated_images]
-    return images
+    
+    if not save_to_temp:
+        return images
+    
+    # Save images to temp folder and return with paths
+    results = []
+    for i, image in enumerate(images):
+        try:
+            temp_path = get_temp_image_path(f"imagen_poster_{i}", "png", unique=True)
+            image.save(temp_path, "PNG")
+            _log.info(f"Saved Imagen poster {i} to: {temp_path}")
+            results.append((image, temp_path))
+        except Exception as e:
+            _log.error(f"Failed to save Imagen poster {i}: {e}")
+            results.append((image, None))
+    
+    return results
 
 
-def generate_poster_gemini(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str]) -> list[Image.Image]:
+def generate_poster_gemini(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str], save_to_temp: bool = True):
     print("\ngenerate_poster_gemini called")
     
-    """Generate images using Gemini image model with its compatible options."""
+    """Generate images using Gemini image model with its compatible options.
+    
+    Args:
+        prompt: Text prompt for generation
+        aspect_ratio: Image aspect ratio
+        saved_logos: List of logo file paths  
+        saved_products: List of product file paths
+        save_to_temp: Whether to save generated images to temp folder
+        
+    Returns:
+        List of tuples (PIL.Image, absolute_path) if save_to_temp=True, else list of PIL.Image
+    """
+    
     
     client = CLIENT_UNBILLED or CLIENT_BILLED
     if CLIENT_UNBILLED is None and CLIENT_BILLED is not None:
@@ -78,9 +122,9 @@ def generate_poster_gemini(prompt: str, aspect_ratio: str, saved_logos: list[str
     
     if USE_USER_ASSET_IMAGE_GEN and (saved_logos or saved_products):
 
-        # Each of these is a path string, not a list
-        uploaded_logos = [client.files.upload(file=MEDIA_DIR / p) for p in saved_logos]
-        uploaded_products = [client.files.upload(file=MEDIA_DIR / p) for p in saved_products]
+        # Each of these is a path string, not a list - use absolute paths for AI model uploads
+        uploaded_logos = [client.files.upload(file=Path(p).absolute() if Path(p).is_absolute() else MEDIA_DIR / p) for p in saved_logos]
+        uploaded_products = [client.files.upload(file=Path(p).absolute() if Path(p).is_absolute() else MEDIA_DIR / p) for p in saved_products]
         # Each element in uploaded_* is a File object you can include in contents
 
         logo_name = uploaded_logos[0].name if uploaded_logos else None
@@ -93,6 +137,10 @@ def generate_poster_gemini(prompt: str, aspect_ratio: str, saved_logos: list[str
             config=GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE],)
         )
     else:
+        # When USE_USER_ASSET_IMAGE_GEN is false, ensure we don't generate logos/products
+        if not USE_USER_ASSET_IMAGE_GEN and (saved_logos or saved_products):
+            added_prompt += "\n\nIMPORTANT: Do not generate any logos, product images, or branded elements. Create a clean background composition only."
+        
         result = client.models.generate_content(
             model=GEMINI_IMAGE_MODEL,
             contents=[types.Content(role="user", parts=[types.Part(text=added_prompt)])],
@@ -111,22 +159,58 @@ def generate_poster_gemini(prompt: str, aspect_ratio: str, saved_logos: list[str
     for part in result.candidates[0].content.parts:
         if part.inline_data:
             images.append(Image.open(BytesIO(part.inline_data.data)))
-                        
-    return images
+    
+    if not save_to_temp:
+        return images
+    
+    # Save images to temp folder and return with paths
+    results = []
+    for i, image in enumerate(images):
+        try:
+            temp_path = get_temp_image_path(f"gemini_poster_{i}", "png", unique=True)
+            image.save(temp_path, "PNG")
+            _log.info(f"Saved Gemini poster {i} to: {temp_path}")
+            results.append((image, temp_path))
+        except Exception as e:
+            _log.error(f"Failed to save Gemini poster {i}: {e}")
+            results.append((image, None))
+    
+    return results
 
 
-def generate_poster(prompt: str, aspect_ratio: str, saved_logos: list[str], saved_products: list[str]) -> list[Image.Image]:
+def generate_poster(prompt: str, aspect_ratio: str, saved_logos: list[str] = None, saved_products: list[str] = None, save_to_temp: bool = True):
     print("\ngenerate_poster called")
     
+    """Generate posters using configured engine (Imagen or Gemini).
+    
+    Args:
+        prompt: Text prompt for generation
+        aspect_ratio: Image aspect ratio
+        saved_logos: List of logo file paths (default: None)
+        saved_products: List of product file paths (default: None)
+        save_to_temp: Whether to save generated images to temp folder
+        
+    Returns:
+        List of tuples (PIL.Image, absolute_path) if save_to_temp=True, else list of PIL.Image
+    """
+    saved_logos = saved_logos or []
+    saved_products = saved_products or []
+    
     if IMAGE_ENGINE == "gemini":
-        return generate_poster_gemini(prompt, aspect_ratio, saved_logos, saved_products)
-    return generate_poster_imagen(prompt, aspect_ratio, saved_logos, saved_products)
+        return generate_poster_gemini(prompt, aspect_ratio, saved_logos, saved_products, save_to_temp)
+    return generate_poster_imagen(prompt, aspect_ratio, saved_logos, saved_products, save_to_temp)
 
 
-def edit_poster_gemini(base_image: Image.Image, edit_instructions: str):
+def edit_poster_gemini(base_image: Image.Image, edit_instructions: str, save_to_temp: bool = True):
     """True edit-by-image using Gemini image preview model with image+text input.
 
-    Returns a list of PIL Images (could be 1+ depending on model behavior).
+    Args:
+        base_image: PIL Image to edit
+        edit_instructions: Text instructions for editing
+        save_to_temp: Whether to save edited images to temp folder
+        
+    Returns:
+        List of tuples (PIL.Image, absolute_path) if save_to_temp=True, else list of PIL.Image
     """
     
     client = CLIENT_UNBILLED or CLIENT_BILLED
@@ -161,7 +245,23 @@ def edit_poster_gemini(base_image: Image.Image, edit_instructions: str):
                 edited.append(Image.open(BytesIO(part.inline_data.data)).convert("RGBA"))
             except Exception:
                 continue
-    return edited
+    
+    if not save_to_temp:
+        return edited
+    
+    # Save edited images to temp folder and return with paths
+    results = []
+    for i, image in enumerate(edited):
+        try:
+            temp_path = get_temp_image_path(f"edited_poster_{i}", "png", unique=True)
+            image.save(temp_path, "PNG")
+            _log.info(f"Saved edited poster {i} to: {temp_path}")
+            results.append((image, temp_path))
+        except Exception as e:
+            _log.error(f"Failed to save edited poster {i}: {e}")
+            results.append((image, None))
+    
+    return results
 
 
 def compose_refined_prompt(base_prompt: str, edit_instructions: str) -> str:

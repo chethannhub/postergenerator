@@ -1,0 +1,68 @@
+{
+  "plot": "",
+  "character_sheets": [
+    {
+      "character_id": "",
+      "description": "",
+      "age_range": "",
+      "ethnicity": "",
+      "gender": "",
+      "pose": "",
+      "gaze": "",
+      "action": "",
+      "priority": ""
+    }
+  ],
+  "environment": {
+    "location": "",
+    "architecture_style": "",
+    "decor": "",
+    "hero_props": [],
+    "supporting_props": []
+  },
+  "style": {
+    "type": "",
+    "aesthetic": "",
+    "camera_shot": "",
+    "camera_angle": "",
+    "lighting": "",
+    "color_palette": "",
+    "details": "",
+    "mood": ""
+  },
+  "composition": {
+    "framing": "",
+    "focal_point": "",
+    "rule_of_thirds": "",
+    "symmetry": "",
+    "leading_lines": "",
+    "negative_space": "",
+    "depth_of_field": "",
+    "background_blur_intensity": "",
+    "bokeh_quality": ""
+  },
+  "parameters": {
+    "aspect_ratio": "",
+    "target_resolution": {
+      "width": "",
+      "height": ""
+    },
+    "seed": "",
+    "steps": "",
+    "guidance_scale": "",
+    "sampler": "",
+    "negative_prompt": "",
+    "safety_filter": ""
+  },
+  "assets": {
+    "brand_name": "",
+    "logo_url": "",
+    "brand_colors": [],
+    "reference_images": []
+  },
+  "controls": {
+    "pose_image": "",
+    "depth_map": "",
+    "edge_map": ""
+  }
+}

@@ -6,6 +6,10 @@ import os
 from ..services.imagen import generate_poster, edit_poster_gemini
 from ..services.openai_image_eval import evaluate_images, evaluate_single_image
 from ..services.gemini import ENHANCE_SYSTEM_PROMPT as ENHANCE_SYSTEM_PROMPT
+from ..services.asset_processor import process_assets_for_overlay
+from ..services.asset_positioning import get_asset_positioning
+from ..services.brand_asset_layer import create_brand_asset_layer
+from ..services.test_layer import add_text_to_poster
 from ..utils.logos import overlay_logo, get_logo_xy, LOGO_DIR, DISABLE_LOGO_OVERLAY
 from ..utils.assets import deserialize_paths, extract_assets_features, build_assets_prompt_snippet, overlay_assets_on_image
 from ..persistence.history import generation_history, save_history
@@ -23,6 +27,10 @@ def generate():
     product_paths = deserialize_paths(request.form.get('product_paths', '') or request.form.get('product_paths[]', ''))
     __import__('logging').getLogger('app.main').info('Generate: start (aspect=%s)\n', aspect_ratio)
     
+    # Check if we should use the new brand asset layer workflow
+    USE_USER_ASSETS_IN_IMAGE_GEN = os.environ.get("USE_USER_ASSETS_IN_IMAGE_GEN", "true").lower() in ("1", "true", "yes")
+    ADD_TEXT_TO_POSTER = os.environ.get("ADD_TEXT_TO_POSTER", "false").lower() in ("1", "true", "yes")
+    
     if not enhanced_prompt:
         flash('Enhanced prompt is required.')
         return render_template('enhance.html', original_prompt=prompt)
@@ -34,7 +42,21 @@ def generate():
         if snippet and snippet not in enhanced_prompt:
             enhanced_prompt = f"{enhanced_prompt}\n\n{snippet}"
 
-    posters = generate_poster(enhanced_prompt, aspect_ratio)
+    # Generate posters with temp saving enabled
+    poster_results = generate_poster(enhanced_prompt, aspect_ratio, logos_paths, product_paths, save_to_temp=True)
+    
+    # Extract images and paths from results
+    posters = []
+    poster_temp_paths = []
+    for result in poster_results:
+        if isinstance(result, tuple) and len(result) == 2:
+            image, temp_path = result
+            posters.append(image)
+            poster_temp_paths.append(temp_path)
+        else:
+            # Fallback for backward compatibility
+            posters.append(result)
+            poster_temp_paths.append(None)
 
     # Optional iterative evaluation/edit loop
     EVAL_ENABLED = (os.environ.get("EVAL_ENABLED", "true").strip().lower() in ("1", "true", "yes", "on"))
@@ -63,9 +85,22 @@ def generate():
                     break
 
                 # True edit-by-image via Gemini
-                edited = edit_poster_gemini(picked, edit_instr)
-                if not edited:
+                edited_results = edit_poster_gemini(picked, edit_instr, save_to_temp=True)
+                if not edited_results:
                     break
+
+                # Extract edited images and their paths
+                edited = []
+                edited_temp_paths = []
+                for result in edited_results:
+                    if isinstance(result, tuple) and len(result) == 2:
+                        image, temp_path = result
+                        edited.append(image)
+                        edited_temp_paths.append(temp_path)
+                    else:
+                        # Fallback for backward compatibility
+                        edited.append(result)
+                        edited_temp_paths.append(None)
 
                 # For display: add all edited images
                 all_images.extend(edited)
@@ -87,13 +122,46 @@ def generate():
         # If anything fails in eval loop, we gracefully fall back to initial posters
         pass
 
-    # Overlay uploaded assets on the last/best image as an extra variant
+    # Apply brand asset layer workflow when USE_USER_ASSETS_IN_IMAGE_GEN is false
     try:
-        if (logos_paths or product_paths) and all_images:
+        if not USE_USER_ASSETS_IN_IMAGE_GEN and (logos_paths or product_paths) and all_images:
+            __import__('logging').getLogger('app.main').info('Generate: Starting brand asset layer workflow')
+            
+            # Get the best/final image from the generation process
+            best_poster = all_images[-1]
+            
+            # Step 1: Process assets (remove backgrounds, clean unwanted objects)
+            processed_logos, processed_products = process_assets_for_overlay(logos_paths, product_paths)
+            
+            if processed_logos or processed_products:
+                # Step 2: Get LLM positioning analysis
+                positioning_data = get_asset_positioning(
+                    best_poster, processed_logos, processed_products, prompt
+                )
+                
+                # Step 3: Create brand asset layer
+                poster_with_assets = create_brand_asset_layer(
+                    best_poster, processed_logos, processed_products, positioning_data
+                )
+                
+                # Step 4: Add text layer if enabled
+                if ADD_TEXT_TO_POSTER:
+                    final_poster = add_text_to_poster(poster_with_assets, prompt)
+                else:
+                    final_poster = poster_with_assets
+                
+                # Add the final result as a new variant
+                all_images.append(final_poster)
+                __import__('logging').getLogger('app.main').info('Generate: Brand asset layer workflow completed')
+
+        # Fallback to original asset overlay for backward compatibility
+        elif USE_USER_ASSETS_IN_IMAGE_GEN and (logos_paths or product_paths) and all_images:
             composed = overlay_assets_on_image(all_images[-1], product_paths, logos_paths)
             all_images.append(composed)
-    except Exception:
-        pass
+            
+    except Exception as e:
+        __import__('logging').getLogger('app.main').error('Generate: Error in asset layer workflow: %s', e)
+        # Continue with original images if asset processing fails
 
     return displayPosters_with_default_logos(all_images, prompt, aspect_ratio, eval_metadata=eval_metadata)
 

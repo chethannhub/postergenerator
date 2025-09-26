@@ -16,3 +16,5 @@ google-auth==2.40.3
 google-genai==1.36.0
 openai==1.107.3
 
+python-telegram-bot==22.4
+
