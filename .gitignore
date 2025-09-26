@@ -3,11 +3,13 @@ _pycache_/
 *.db
 .env
 logo.py
-logo.png
+Logo.png
+Logo2.png
 generation_history.json
-.venev/
+.venv/
 __pycache__/
 venv/
 logs/
 .log
 .github/
+telegram.py
